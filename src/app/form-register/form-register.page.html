@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="back-circle"></div>
+    <ion-title class="ion-text-center" class="findercolor1">finder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+   <div class="ptext" >
+    <p class="text">Profitez de notre plate forme shoping pour vendre </p>
+    <p class="text">en toute simplicité vos objets</p>
+   </div>
+   
+  
+    <form>
+      <div class="wrap-input">
+       <ion-input class="ion-text-center"  type="text" name="firstname"
+        placeholder="furst name"[(ngModel)]="first_name" >  </ion-input>
+      </div>
+      <div class="wrap-input">
+        <ion-input class="ion-text-center"  type="text" name="lastname"
+         placeholder="last name"[(ngModel)]="last_name" >  </ion-input>
+       </div>
+       <div class="wrap-input">
+        <ion-input class="ion-text-center" type="number" name="number"
+         placeholder="contact number"[(ngModel)]="contact_number" > </ion-input>
+       </div>
+       <div class="wrap-input">
+        <ion-input class="ion-text-center" type="text" name="address"
+         placeholder="addresse"[(ngModel)]="addresse" > </ion-input>
+       </div>
+       <div class="wrap-input">
+        <ion-input class="ion-text-center" type="email" name="email"
+         placeholder="email"[(ngModel)]="email"> </ion-input>
+       </div>
+
+       <div class="wrap-input">
+        <ion-input class="ion-text-center" type="pasword" name="password"
+         placeholder="pasword"[(ngModel)]="pasword"> </ion-input>
+       </div>
+
+       
+ <div class="container-form-btn">
+  
+
+  <button ion-button  class="form-btn"  (click)="register()" >
+    <ion-icon ion-button  name="camera">&nbsp; 
+    </ion-icon>&nbsp; 
+      Register
+    </button> 
+    </div>
+
+       
+    </form>
+</ion-content>
+<ion-footer class="ion-no-border" >
+  <ion-toolbar  class="foot" >
+  <p   class="ion-text-center">vous avez déjà un compte?
+    <a href="/form-login" class="findercolor1">conectez vous</a>
+  </p>
+  
+  
+  </ion-toolbar>
+  
+  </ion-footer>

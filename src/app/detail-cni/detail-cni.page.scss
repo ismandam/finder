@@ -1,0 +1,66 @@
+.findercolor{
+    // --background: var(--ion-color-finder);
+    --background:#9651DA;
+     color:white;
+     }
+     .starcolor{
+      color: rgb(255, 255, 0);
+ 
+     }
+
+ion-card{
+
+    --background: white;
+  
+  }
+    
+  
+  #menubtn {
+    --background: rgba(var(--ion-color-primary), #9651DA);
+    
+  }
+  .textright{
+  // float: right;
+  // align-self: center;
+   margin-left: 20px;
+  }
+  
+  .left{
+    float: left;
+   // padding-right: 25px;
+    align-self: center;
+  }
+  .button-right{
+
+    float:right;
+  }
+  .button-left{
+    float: left;
+   // padding-right: 5px;
+    align-self: center;
+  }
+  .text{
+    position:center;
+    justify-content: center;
+  }
+  .col{
+    border:2px solid  #d6cbe0;
+      border-radius: 10px;
+     // margin:5px ;
+     background-color:rgb(200, 222, 223);
+      }
+      .linecolor{
+      background-color: yellow;
+
+      }
+      .app-icon{
+        background-image: url(/assets/image/share0.svg);
+        height: 150px;
+        width: 150px;
+        background-repeat: no-repeat;
+       // border-radius: 320px;
+        background-position: center;
+        background-size: contain;
+       //background-color: #3a6d7e;
+        margin: 30px auto;
+      }

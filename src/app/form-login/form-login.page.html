@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="back-circle">
+
+
+    </div>
+    <ion-title class="ion-text-center" class="findercolor1">finder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form>
+ <div class="wrap-input">
+  <ion-input class="ion-text-center"  type="email" name="user_email" placeholder="email"[(ngModel)]="user_email" >  </ion-input>
+ </div>
+ <div class="wrap-input">
+  <ion-input class="input" class="ion-text-center" type="password" name="user_pass" placeholder="mots de passe" [(ngModel)]="user_pass" >  </ion-input>
+ </div>
+
+ <div class="container-form-btn">
+  
+
+    <button ion-button  class="form-btn"  (click)="login()" >
+      <ion-icon ion-button  name="camera">&nbsp; 
+      </ion-icon>&nbsp; 
+      connexion
+    </button> 
+ </div>
+
+  </form>
+
+</ion-content>
+<ion-footer class="ion-no-border" >
+<ion-toolbar  class="foot" >
+<p   class="ion-text-center">Finder pour vous servire
+ 
+</p>
+
+
+</ion-toolbar>
+
+</ion-footer>

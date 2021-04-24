@@ -1,0 +1,48 @@
+ion-menu-button {
+  color:white;
+  
+}
+.findercolor{
+ 
+ --background:#9651DA;
+  color:white;
+  }
+  .search{
+  padding-inline-end: 10px;
+  align-self: center;
+  color: white;
+
+  }
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+.btncenter{
+  display:flex;
+  justify-content: center;
+ 
+ }
+ .starcolor{
+     color: yellow;
+ 
+    }

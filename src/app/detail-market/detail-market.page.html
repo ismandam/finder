@@ -1,0 +1,86 @@
+<ion-header>
+  
+  <ion-toolbar class="findercolor" *ngIf="data != null" >
+    <ion-buttons id="menubtn" slot="start">
+      <ion-back-button id="menubtn" class="findercolor" ></ion-back-button>
+     
+    </ion-buttons>
+      
+    
+    
+      <ion-button class="findercolor" slot="end"  (click)="openCart()" >
+        <ion-icon class="startcolor" ion-button icon="cart" large >
+          
+        </ion-icon>
+      </ion-button>
+    
+      <ion-button  slot="end" class="findercolor" (click)="partage()">
+         
+      <ion-icon class="startcolor"  slot="start" icon="share1"></ion-icon>&nbsp;
+        
+     </ion-button>
+     <ion-title>{{data.title}}</ion-title>
+      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card *ngIf="data != null">
+    <ion-slides pager [options]="slideOptions"  >
+      <ion-slide >
+        <img src="{{data.img[0]}}" *ngIf="data.img[0] != null" alt="Image">
+      </ion-slide>
+      <ion-slide>
+        <img src="{{data.img[1]}}" *ngIf="data.img[1] != null" alt="Image">
+      </ion-slide>
+      <ion-slide>
+        <img src="{{data.img[2]}}" *ngIf="data.img[2] != null" alt="Image">
+      </ion-slide>
+    </ion-slides>
+    
+    <ion-chip class="chip5">
+      <ion-label >Categorie: {{data.category}}</ion-label>
+    </ion-chip>
+   <ion-chip class="chip4">
+     <ion-label >{{data.description}}</ion-label>
+   </ion-chip>
+   <ion-chip class="chip3">
+    <ion-label>Etat du produit: {{data.state}}</ion-label>
+  </ion-chip>
+
+  <ion-chip class="chip2">
+    <ion-label>ville: {{data.city}}</ion-label>
+  </ion-chip>
+  <ion-chip class="chip1">
+    <ion-label>prix: {{data.price | currency}}</ion-label>
+  </ion-chip>
+  <ion-card-content>
+    <ion-card-title>
+
+  </ion-card-title>
+  <h2>{{data.price}}</h2>
+   <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eligendi? Accusantium, doloribus? Laboriosam iure quisquam, quia, ut a eveniet exercitationem blanditiis tempora consectetur molestias saepe! Dolorem, ipsam? Unde, obcaecati voluptates?</p>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-grid >
+    <ion-buttons padding class="btncenter">
+    <ion-row padding >   
+    <ion-col >
+      <ion-button class="findercolor">
+        <ion-icon ion-button class="starcolor" name="cart" >&nbsp; 
+        </ion-icon>&nbsp; 
+           Ajouter un produit dans votre panier
+      </ion-button> 
+    </ion-col>
+    
+  </ion-row>
+  
+  </ion-buttons>
+  </ion-grid>
+    
+  
+  
+  </ion-footer>

@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="findercolor" >
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+   <ion-searchbar
+   *ngIf="toggled"
+   showCancelbutton="true"
+   animated="true"
+   (ionCancel)="toggleSearch()"
+  animated [(ngModel)]="searchTerm"
+   >
+   </ion-searchbar>
+   <ion-icon class="search" ion-button slot="end" *ngIf="!toggled" (click)="toggle()" name="search" >
+
+   </ion-icon>
+   <ion-title>permis</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+
+</ion-content>
