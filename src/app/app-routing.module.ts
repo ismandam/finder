@@ -51,6 +51,14 @@ const routes: Routes = [
     path: 'log-out',
     loadChildren: () => import('./log-out/log-out.module').then( m => m.LogOutPageModule)
   },
+  {
+    path: 'vandre',
+    loadChildren: () => import('./vandre/vandre.module').then( m => m.VandrePageModule)
+  },
+  {
+    path: 'marke-user',
+    loadChildren: () => import('./marke-user/marke-user.module').then( m => m.MarkeUserPageModule)
+  },
 
  
 ];

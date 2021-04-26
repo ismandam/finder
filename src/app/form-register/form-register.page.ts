@@ -12,7 +12,7 @@ export class FormRegisterPage implements OnInit {
 private first_name: string="";
 private last_name:string="";
 private contact_number:string="";
-private addresse;string="";
+private addresse:string="";
 private email:string="";
 private pasword:string="";
 private url="http://169.254.248.202/finder/super/ionic_api.php";
@@ -30,7 +30,7 @@ private url="http://169.254.248.202/finder/super/ionic_api.php";
   }
 
  async register(){
-return new Promise((resolve) => {
+  return new Promise((resolve) => {
   let body ={
     action:'ionic_register',
     firstname:this.first_name,
@@ -41,12 +41,17 @@ return new Promise((resolve) => {
     password:this.pasword,
   }
   this.http.post(this.url,body).subscribe((res:any)=>{
-    
+    console.log(res);
    this.respons= res.success;
    
-  if(this.respons==true){  
+  if(this.respons==true){ 
+    let body1 ={
+      action:'ionic_login',
+              email: this.email,
+              password:this.pasword,
+    }
     this.storage.create();
-    this.storage.set('body',body);
+    this.storage.set('body1',body1);
     this.respons= res.msg;
     console.log(" retour de mon api :"+ this.respons);
     let navigationExtras: NavigationExtras = {
@@ -69,9 +74,6 @@ return new Promise((resolve) => {
   });
 
  
-})
-
-
-
-  }
+  });
+}
 }

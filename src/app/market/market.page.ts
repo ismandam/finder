@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import{MyserviceService} from '../myservice.service';
 import{Product} from '../models/interface_product';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router, NavigationExtras} from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import{Storage} from '@ionic/storage';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-market',
   templateUrl: './market.page.html',
@@ -12,10 +13,12 @@ import{Storage} from '@ionic/storage';
 export class MarketPage implements OnInit {
 
   data: Product[];
-  data1:any="bonjour";
+  data1:any="";
+  data2:any="";
   searchTerm:string;
   public toggled:boolean=false;
   constructor(
+   private navCtrl:NavController,
     private activatedRoute: ActivatedRoute,
     public router:Router,
     private storage:Storage
@@ -121,25 +124,39 @@ export class MarketPage implements OnInit {
      avStart:2
      }
     ]
-    this.storage.create();
-    this.storage.get("body").then(val=>{
-
-   this.data1=val.firstname;
-   console.log("ma valeur"+this.data1);
- });
+   
  this.toggled = false;
   }
 
   public toggle():void{
   
     this.toggled=!this.toggled
- }
+   }
 
  toggleSearch(){
    this.toggled=this.toggled ? false:true;
  }
   
   ngOnInit() {
+  }
+
+  vendre(){
+   this.storage.create();
+   this.storage.get("body1").then(val=>{
+    console.log("val content"+ val);
+    if(val==null){
+      console.log("connectez vous pour vendre un produit");
+      this.router.navigate(["form-login"]);
+    }else
+    {
+      this.data1=val.email;
+      this.data2=val.password;
+      console.log("bienvenu"+this.data1);
+      this.router.navigate(["vandre"]);
+    }
+
+    }).catch(error=>"erreur de donnees"+error);
+
   }
   registerpage(){
 
@@ -166,10 +183,5 @@ export class MarketPage implements OnInit {
         console.log("bonjour");
        }
 
-       log_out(){
-       this.storage.create();
-       this.storage.clear();
-       this.router.navigate(['form-login']);
-
-       }
+      
 }

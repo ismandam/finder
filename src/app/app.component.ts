@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 import { Router,  NavigationExtras } from '@angular/router';
+import{Storage} from '@ionic/storage';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -21,8 +23,12 @@ export class AppComponent {
 
   ];
   public labels = ['inscription', 'login', 'message'];
-  constructor(  public router: Router) {
+  constructor(  public router: Router,
+    private storage:Storage,
+    private navCtrl:NavController
+    ) {
 
+    
 /*
     this.storage.get('storage_sesson').then((res)=>{
       if(res==null){
@@ -37,6 +43,12 @@ export class AppComponent {
   }
 
   
-  
+  logout(){
+    this.storage.create();
+    this.storage.clear();
+   // this.router.navigate(["form-login"]);
+    this.navCtrl.navigateRoot('/form-login', { animated: true, animationDirection: 'forward' });
+
+    }
 
 }
