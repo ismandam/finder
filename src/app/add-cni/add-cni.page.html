@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="back-circle"></div>
+    <ion-title class="ion-text-center" class="findercolor1">Finder!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ptext" >
+    <p class="text">Vous avez trouvé une CNI? </p>
+    <p class="text">Enrégistrez le</p>
+    <p class="text">et gagnez de l'argent!</p>
+   </div>
+
+   <form>
+    <div class="wrap-input">
+     <ion-input class="ion-text-center"  type="text" name="nom"
+      placeholder="Nom"[(ngModel)]="Nom" >  </ion-input>
+    </div>
+    <div class="wrap-input">
+      <ion-input class="ion-text-center"  type="text" name="prenom"
+       placeholder="Prenom"[(ngModel)]="Prenom" >  </ion-input>
+     </div>
+     <div class="wrap-input">
+      <ion-input class="ion-text-center" type="number" name="number"
+       placeholder="numéro de la cni"[(ngModel)]="Numero_cni" > </ion-input>
+     </div>
+     <div class="wrap-input">
+      <ion-input class="ion-text-center" type="date" name="datecni"
+       placeholder="date de délivrance"[(ngModel)]="date_cni" > </ion-input>
+     </div>
+     <div class="container-form-btn">
+
+
+      <button ion-button  class="form-btn"  (click)="imagePicker()" >
+        <ion-icon ion-button  name="camera">&nbsp; 
+        </ion-icon>&nbsp; 
+          photo cni
+        </button> 
+        </div>&nbsp;&nbsp;
+
+     <div class="wrap-input">
+      <ion-input class="ion-text-center" type="text" name="votrenom"
+       placeholder="votre nom"[(ngModel)]="votre_nom" > </ion-input>
+     </div>
+     <div class="wrap-input">
+      <ion-input class="ion-text-center" type="email" name="email"
+       placeholder="votre email"[(ngModel)]="email"> </ion-input>
+     </div>
+
+     <div class="wrap-input">
+      <ion-input class="ion-text-center" type="number" name="telephone"
+       placeholder="votre numero de telephone"[(ngModel)]="telephone"> </ion-input>
+     </div>
+
+     
+<div class="container-form-btn">
+
+
+<button ion-button  class="form-btn"  (click)="register()" >
+  <ion-icon ion-button  name="camera">&nbsp; 
+  </ion-icon>&nbsp; 
+    Register
+  </button> 
+  </div>
+
+     
+  </form>
+</ion-content>

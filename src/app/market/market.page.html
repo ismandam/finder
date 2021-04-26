@@ -157,19 +157,19 @@
     
       </ion-buttons>
 -->
-<ion-searchbar
-*ngIf="toggled"
-showCancelbutton="always"
-animated="true"
-(ionCancel)="toggleSearch()"
-animated [(ngModel)]="searchTerm"
->
-</ion-searchbar>
-<ion-icon class="search" ion-button slot="end" *ngIf="!toggled" (click)="toggle()" name="search" >
+      <ion-searchbar
+          *ngIf="toggled"
+          showCancelbutton="always"
+          animated="true"
+          (ionCancel)="toggleSearch()"
+          animated [(ngModel)]="searchTerm"
+          >
+      </ion-searchbar>
+      <ion-icon class="search" ion-button slot="end" *ngIf="!toggled" (click)="toggle()" name="search" >
 
-</ion-icon>
-</ion-toolbar>
-
+      </ion-icon>
+    </ion-toolbar>
+  </ion-header>
     <ion-list>
      <ion-item *ngFor="let product of data|filter:searchTerm" type="ion-button" (click)="marketlistener(product)">
       <ion-thumbnail slot="start">
@@ -198,7 +198,7 @@ animated [(ngModel)]="searchTerm"
      </ion-item>
 
     </ion-list>
-  </ion-header>
+
 
   
 

@@ -28,26 +28,27 @@
     </ion-refresher-content>
   </ion-refresher>
  
-  <ion-card  *ngFor="let info of allInfos|filter:searchTerm" type="ion-button" (click)="homelistener(info)"  >
-    <ion-item  class="ion-activated" >
-      <ion-thumbnail slot="start">
-       <img src="{{info.urlimage}}" *ngIf="info.urlimage != null" alt="Image">
-      </ion-thumbnail>
-      <ion-label>
-        <p>
-        <b>Nom: {{info.nom_prenom}}</b>
+  
+  <ion-list  >&nbsp;
+   <ion-item  *ngFor="let info of allInfos|filter:searchTerm" type="ion-button" (click)="homelistener(info)" >
+    <ion-thumbnail slot="start">
+      <img src="{{info.urlimage}}" *ngIf="info.urlimage != null" alt="Image">
+     </ion-thumbnail>
+     <ion-label>
+       <p>
+       <b>Nom: {{info.nom_prenom}}</b>
+       </p>
+       <p>
+        Numero CNI: {{info.num_cni}}
+       </p>
+       <p>
+         Date CNI: {{info.date_cni}}
         </p>
-        <p>
-         Numero CNI: {{info.num_cni}}
-        </p>
-        <p>
-          Date CNI: {{info.date_cni}}
-         </p>
-       
-      </ion-label>
-     
-    </ion-item>
-  </ion-card>
+      
+     </ion-label>
+   </ion-item>
+
+  </ion-list>
   
 
 </ion-content>
@@ -56,7 +57,7 @@
     <ion-buttons padding class="btncenter">
     <ion-row padding  >   
     <ion-col >
-      <ion-button class="findercolor">
+      <ion-button class="findercolor" (click)="addcni()">
         <ion-icon ion-button class="starcolor" name="camera">&nbsp; 
         </ion-icon>&nbsp; 
            Ajoutez un objet trouvé
@@ -66,8 +67,5 @@
   </ion-row>
   
   </ion-buttons>
-  </ion-grid>
-    
-  
-  
+ </ion-grid>
   </ion-footer>

@@ -16,134 +16,145 @@
   
   </ion-toolbar>
 </ion-header>
-<ion-content>
-   <ion-card>
+<ion-content >
+    <!--espace pub-->
+   <ion-card class="contn">
     <ion-slides pager [options]="slideOptions"  >
       <ion-slide >
-         <h3>titre page 1 </h3>
+         <h3>publicité 1 </h3>
       </ion-slide>
       <ion-slide>
-        <h3>titre page 2 </h3>
+        <h3>publicité 2 </h3>
       </ion-slide>
       <ion-slide>
-        <h3>titre page 3 </h3>
+        <h3>publicité 3 </h3>
       </ion-slide>
     </ion-slides>
    </ion-card>
+   <!-- fin espace pub-->
    <ion-card *ngIf="data != null">
-    <img src="{{data.urlimage}}" *ngIf="data.urlimage != null" alt="Image">
-     <ion-card-content>
-        <ion-card-title>
-        <p class="text">
-          <b>
-           Nom: {{data.nom_prenom}}
-          </b>
-          
-        </p>
-        <p>
-         Numero CNI: {{data.num_cni}}
-        </p>
-        
-        </ion-card-title>
-     
-            <!--  -->
-      <hr class="linecolor">
-      <ion-grid>
-        <ion-row>
-         <ion-col>
-          <ion-chip *ngIf="ischecked" class="findercolor">
-            <ion-label>merci</ion-label>
-
-          </ion-chip>
-          <ion-chip *ngIf="!ischecked" class="findercolor">
-            <ion-label>Est ce bien vous?</ion-label>
-
-          </ion-chip>  
-             <!--check -->
-           <ion-grid>
-              <!--ion checkers  -->
-            <ion-row>
-              <ion-col>
-                
-                 <ion-checkbox color="primary" class="left"  [(ngModel)]="ischecked" (ionChange)="testcheck()">
+       <img src="{{data.urlimage}}" *ngIf="data.urlimage != null" alt="Image">
+      <ion-card-content >
+            <ion-card-title>
+                  <p>
+                    <b>
+                    Nom: {{data.nom_prenom}}
+                    </b>
                     
-                 </ion-checkbox>  
-                 <ion-label>cochez ici!</ion-label>            
-               </ion-col>
-            </ion-row>
-            <!-- checkers 
+                  </p>
+                  <p>
+                  Numero CNI: {{data.num_cni}}
+                  </p>
+            
+            </ion-card-title>
+        
+                <!--  -->
+            <hr class="linecolor">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                      <ion-chip *ngIf="ischecked" class="chip3">
+                        <ion-label>merci</ion-label>
+
+                      </ion-chip>
+                      <ion-chip *ngIf="!ischecked" class="chip1">
+                        <ion-label>Est ce bien vous?</ion-label>
+
+                      </ion-chip>  
+                        <!--check -->
+                      <ion-grid>
+                          <!--ion checkers  -->
+                        <ion-row>
+                          <ion-col>
+                            
+                            <ion-checkbox color="primary" class="left"  [(ngModel)]="ischecked" (ionChange)="testcheck()">
+                                
+                            </ion-checkbox>  
+                            <ion-label>cochez ici!</ion-label>            
+                          </ion-col>
+                        </ion-row>
+                  
+                      </ion-grid>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+                <!--  -->
+          <hr class="linecolor">
+          
+          <ion-grid >
+              <ion-row>
+                    <ion-chip class="chip2">
+                      <ion-label> Termes et conditions! </ion-label>
+
+                    </ion-chip>
+              </ion-row>
+            </ion-grid>
+            <!--  -->
+        
+
+        <hr class="linecolor">
+            <br>
+            <ion-label  class="text">
+            <p >
+              Nos agents se mobilisent dans toute la ville pour retrouver pour vous vos pièces d\'identité.
+              Nous géo localisons les endroits ou vous pourrez retrouver votre CNI.L'application FINDER vous offre un puissant moteur de recherche
+              vous permettant de trouver votre CNI enregistré dans notre base de donnée.
+              Le renseignement vous permettant de retrouver votre CNI est précédé d'un payement de 500 frcfa via le transfert mobile.
+              Avant de prendre l\'initiative d\'aller refaire votre CNI, nous invitons au préalable d\'effectuer une recherche dans notre application,
+              cela pourrait vous évité dépenser 5000 fr et plus pour une nouvelle CNI.
+              nous vous prions de partager notre application pour permettre au autres de retrouver leurs CNI,\n
+                  Merci.
+            </p>
+          </ion-label>
+          <hr class="line_color">
+                
+
+          <!-- <ion-grid>
             <ion-row>
               <ion-col>
-              <ion-chip *ngIf="ischecked" class="findercolor">
-                <ion-label>merci</ion-label>
-  
-              </ion-chip>
-              <ion-chip *ngIf="!ischecked" class="findercolor">
-                <ion-label>Est ce bien vous?</ion-label>
-  
-              </ion-chip>           
-              </ion-col>
-            </ion-row> -->
-      
-           </ion-grid>
-          </ion-col>
-           </ion-row>
-      </ion-grid>
-           <!--  -->
-      <hr class="linecolor">
-      
-       <ion-grid >
-        <ion-row>
-          <ion-chip class="findercolor">
-             <ion-label> Termes et conditions! </ion-label>
+                <ion-input  class="col" type="text" placeholder="laissez nous un msg svp">
 
-           </ion-chip>
-     
-         </ion-row>
 
-      </ion-grid>
-        <!--  -->
-     
-
-     <hr class="linecolor">
-        <br>
-        <p class="text">
-          Nos agents se mobilisent dans toute la ville pour retrouver pour vous vos pièces d\'identité.
-          Nous géo localisons les endroits ou vous pourrez retrouver votre CNI.L'application FINDER vous offre un puissant moteur de recherche
-          vous permettant de trouver votre CNI enregistré dans notre base de donnée.
-          Le renseignement vous permettant de retrouver votre CNI est précédé d'un payement de 500 frcfa via le transfert mobile.
-          Avant de prendre l\'initiative d\'aller refaire votre CNI, nous invitons au préalable d\'effectuer une recherche dans notre application,
-          cela pourrait vous évité dépenser 5000 fr et plus pour une nouvelle CNI.
-          nous vous prions de partager notre application pour permettre au autres de retrouver leurs CNI,\n
-              Merci.
-        </p>
-      <hr class="line_color">
+                </ion-input>
+                  <ion-button   class="findercolor" (click)="sendmsg()">
+                  
+                  <ion-icon slot="start" class="starcolor" icon="send"></ion-icon>&nbsp;
+                  Send msg
+                  </ion-button>
+                
+                </ion-col>
+            </ion-row>
+            </ion-grid>-->     
             
 
-            
-        <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-input  class="col" type="text" placeholder="laissez nous un msg svp">
-
-
-            </ion-input>
-              <ion-button   class="findercolor" (click)="sendmsg()">
+          <ion-grid >
+            <ion-chip class="chip3">
+              <ion-label class="text1">
+               Laissez nous un message de validation de votre identité
+              </ion-label>
+            </ion-chip>
+                <ion-buttons padding class="btncenter">
+                    <ion-row padding  >   
+                    <ion-col >
+                      <ion-button class="findercolor" (click)="sendmsg()">
+                        <ion-icon ion-button class="starcolor" name="send">&nbsp; 
+                        </ion-icon>&nbsp; 
+                          Laissez nous un msg
+                      </ion-button> 
+                    </ion-col>
+                    
+                  </ion-row>
               
-               <ion-icon slot="start" class="starcolor" icon="send"></ion-icon>&nbsp;
-               Send msg
-              </ion-button>
-             
-            </ion-col>
-        </ion-row>
-        </ion-grid>
-     </ion-card-content>
+                </ion-buttons>
+          </ion-grid>
+      </ion-card-content>
 
        <!-- <hr class="col"> -->
-      
-       
-      
    </ion-card>
  
  
 </ion-content>
+
+<ion-footer  >
+
+</ion-footer>

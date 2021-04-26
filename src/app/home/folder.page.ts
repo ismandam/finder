@@ -61,4 +61,9 @@ export class FolderPage implements OnInit {
         }
       });
     }
+
+    addcni(){
+      this.router.navigate(['add-cni']);
+
+    }
 }

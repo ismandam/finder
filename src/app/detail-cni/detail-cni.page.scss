@@ -42,6 +42,14 @@ ion-card{
   .text{
     position:center;
     justify-content: center;
+   // background-color: #7922cf23;
+    background-color:  #00000000;
+    color: #80000065;
+  }
+  .text1{
+   // position:center;
+    justify-content: center;
+    
   }
   .col{
     border:2px solid  #d6cbe0;
@@ -64,3 +72,30 @@ ion-card{
        //background-color: #3a6d7e;
         margin: 30px auto;
       }
+
+      .btncenter{
+        display:flex;
+        justify-content: center;
+       
+       }
+
+       .chip1{
+
+        background-color: #7904ee54;
+        color: rgb(92, 3, 128);
+    }
+    .chip2{
+    
+      background-color:#f8a407;
+      color: rgb(218, 20, 20);
+    }
+    .chip3{
+       
+        background-color:rgba(218, 67, 29, 0.418);
+        color:  #d12109;
+    }
+    .contn{
+       
+      background-color: #7904ee54;
+        color: rgb(92, 3, 128);
+  }

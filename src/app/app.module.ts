@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import{HttpClientModule} from '@angular/common/http';
 import{MyserviceService} from './myservice.service';
 import{IonicStorageModule} from '@ionic/storage-angular';
-
+import{ImagePicker} from '@ionic-native/image-picker/ngx';
 
 
 @NgModule({
@@ -23,9 +23,11 @@ import{IonicStorageModule} from '@ionic/storage-angular';
      AppRoutingModule,
     Ng2SearchPipeModule,
     IonicStorageModule.forRoot(),
+    //providers:[ImagePicker,{provide:RouteReuseStrategy,useClass:IonicRouteStrategy}]
+  
    
   ],
-  providers: [{ 
+  providers: [ImagePicker,{ 
     provide: RouteReuseStrategy, 
     useClass: IonicRouteStrategy
    },
