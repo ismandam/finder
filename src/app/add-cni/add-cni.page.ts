@@ -1,4 +1,4 @@
-import { variable } from '@angular/compiler/src/output/output_ast';
+
 import { Component, OnInit } from '@angular/core';
 import{ImagePicker} from '@ionic-native/image-picker/ngx';
 
@@ -23,7 +23,7 @@ this.image.getPictures(this.options).then((results)=>{
 this.imgres.push('data:image/jpeg;base64,'+ results[i]);
   }
 },(error)=>{
-alert(error);
+console.log(error);
 });
 
 }

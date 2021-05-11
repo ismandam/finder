@@ -71,3 +71,27 @@ ion-fab-button[data-desc]::after{
   color:rgb(255, 255, 255);
   box-shadow:0 3px 5px -1px rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.14),0 1px 18px 0 rgba(0,0,0,0.12);
 }
+
+.wrap-input{
+  background-color: #9651da52;
+  //border-radius: 20px;
+  margin: 26px;
+  box-shadow: 0 10px 30px 0px rgba(57,71,82,0.12);
+  
+    }
+    ion-button {
+      margin: 26px;
+    }
+    .marg{
+    margin: 30px ;
+
+    }
+    ion-item{
+     // --background: #9651da52;
+      box-shadow: 0 10px 30px 0px rgba(57,71,82,0.12);
+    }
+    .label{
+     // --background: #9651da1f;
+      color: #9651DA;
+
+    }

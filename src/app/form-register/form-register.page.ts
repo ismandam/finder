@@ -15,7 +15,7 @@ private contact_number:string="";
 private addresse:string="";
 private email:string="";
 private pasword:string="";
-private url="http://169.254.248.202/finder/super/ionic_api.php";
+private url="http://192.168.100.62/finder/super/ionic_api.php";
  private respons:any;
 
   constructor(

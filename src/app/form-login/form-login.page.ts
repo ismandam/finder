@@ -15,7 +15,7 @@ private user_email:string="";
 private user_pass: string="";
 data1:any="";
 data2:any="";
-private url="http://169.254.248.202/finder/super/ionic_api.php";
+private url="http://192.168.100.62/finder/super/ionic_api.php";
 private response:any;
   constructor(
     private storage:Storage,
@@ -32,6 +32,8 @@ private response:any;
      console.log("val content"+ val);
       if(val==null){
             console.log("rien dans la bd");
+            console.log("user="+this.user_email);
+            console.log("pass="+this.user_pass);
             let body1={
               action2:'ionic_login',
               email: this.user_email,

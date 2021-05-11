@@ -23,7 +23,7 @@ import{ImagePicker} from '@ionic-native/image-picker/ngx';
      AppRoutingModule,
     Ng2SearchPipeModule,
     IonicStorageModule.forRoot(),
-    //providers:[ImagePicker,{provide:RouteReuseStrategy,useClass:IonicRouteStrategy}]
+  
   
    
   ],

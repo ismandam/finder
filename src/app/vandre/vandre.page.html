@@ -6,13 +6,70 @@
     </ion-buttons>
     
  
-   <ion-title>bienvenu</ion-title>
+   <ion-title>Enrégistrez un produit à vendre</ion-title>
   </ion-toolbar>
   
 </ion-header>
 
 <ion-content>
+  <div class="marg">
+  <ion-list class="ion-padding">
+    <ion-item >
+      <ion-label class="label" position="floating"> Nom du produit</ion-label>
+      <ion-input  class="ion-text-center"  type="text" name="nom"
+       [(ngModel)]="nom_produit" >  </ion-input>
+      </ion-item>&nbsp;
+     <ion-item>
+      <ion-label class="label" position="floating">Description du produit</ion-label>
+      <ion-input class="ion-text-center"  type="text" name="desc"
+      [(ngModel)]="description" >  </ion-input>
+     </ion-item>&nbsp;
 
+     <ion-item>
+      <ion-label class="label" position="floating">Details du produit</ion-label>
+      <ion-input class="ion-text-center"  type="text" name="detail"
+       [(ngModel)]="detail" >  </ion-input>
+     </ion-item>&nbsp;
+      
+        <ion-item>
+          <ion-label class="label" position="floating">Categorie du produit</ion-label>
+        <ion-select  placeholder="vetements" [(ngModel)]="categorie" >
+          <ion-select-option value="v">vetements</ion-select-option>
+          <ion-select-option value="c">chaussure</ion-select-option>
+          <ion-select-option value="b">bijoux</ion-select-option>
+          <ion-select-option value="s">sac</ion-select-option>
+          <ion-select-option value="be">beauté</ion-select-option>
+          <ion-select-option value="m">mode</ion-select-option>
+          <ion-select-option value="e">électroniques</ion-select-option>
+          <ion-select-option value="v">voitures</ion-select-option>
+          <ion-select-option value="i">immobilier</ion-select-option>
+          <ion-select-option value="q">Quincaillerie</ion-select-option>
+          <ion-select-option value="a">Autre</ion-select-option>
+        </ion-select>
+      </ion-item>&nbsp;
+     
+     
+        <ion-item>  
+          <ion-label class="label" position="floating">Etat du produit</ion-label>
+        <ion-select  placeholder="Neuf"  [(ngModel)]="etat">
+          <ion-select-option value="n">Neuf</ion-select-option>
+          <ion-select-option value="p">Premier choix</ion-select-option>
+          <ion-select-option value="d">Dexième choix</ion-select-option>
+          <ion-select-option value="t">Troixième choix</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <!--submit button -->
+        <div class="container-form-btn">
+            <ion-button  class="form-btn"  (click)="send_data()" >
+              <ion-icon ion-button  name="send">&nbsp; 
+              </ion-icon>&nbsp; 
+              Erégistrez votre produit
+            </ion-button> 
+        </div>&nbsp;&nbsp;
+
+      </ion-list>
+</div>
 </ion-content>
 <ion-footer class="ion-no-border" >
   <ion-toolbar  class="foot" >
