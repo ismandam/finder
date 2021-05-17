@@ -17,6 +17,7 @@ export class MarketPage implements OnInit {
   data2:any="";
   searchTerm:string;
   public toggled:boolean=false;
+  public fab_data:string="";
   constructor(
    private navCtrl:NavController,
     private activatedRoute: ActivatedRoute,
@@ -24,7 +25,9 @@ export class MarketPage implements OnInit {
     private storage:Storage
     ) {
     this.data=[
-     {title:'radio',
+     {
+       id:'1',
+       title:'radio',
      description:'ma description',
      img:[
       'assets/img/prod1/img1.jpg',
@@ -34,10 +37,17 @@ export class MarketPage implements OnInit {
      category:'vetement',
      state:'neuf',
      city:'yde',
-     avStart:4
+     avStart:4,
+     disponible:{
+       dispo:true,
+       type: 'Disponible en magasin',
+      
+     }
      },
 ////////im2////////////
-     {title:'television',
+     {
+       id:'2',
+       title:'television',
      description:'ma description',
      img:[
       'assets/img/prod2/img1.jpg',
@@ -47,10 +57,17 @@ export class MarketPage implements OnInit {
      category:'vetement',
      state:'neuf',
      city:'yde',
-     avStart:3
+     avStart:3,
+     disponible:{
+      dispo:true,
+      type: 'livraison',
+      frais:1000,
+    }
      },
 ///////////////img3///////////////
-     {title:'camera',
+     {
+      id:'3',
+      title:'camera',
      description:'ma description',
      img:[
       'assets/img/prod3/img1.jpg',
@@ -61,10 +78,17 @@ export class MarketPage implements OnInit {
      category:'vetement',
      state:'neuf',
      city:'Yaoundé',
-     avStart:1
+     avStart:1,
+     disponible:{
+      dispo:true,
+      type: 'livraison',
+      frais:1000,
+    }
      },
 //////////////img4///////////////////
-     {title:'laptop',
+     {
+      id:'4',
+      title:'laptop',
      description:'Ordinateur portable core i5, 4GB de ram '
       ,
      img:[
@@ -76,10 +100,18 @@ export class MarketPage implements OnInit {
      category:'vetement',
      state:'neuf',
      city:'Douala',
-     avStart:2
+     avStart:2,
+
+     disponible:{
+      dispo:true,
+      type: 'Disponible en magasin',
+     
+    }
      },
      //////////////img5///////////////////
-     {title:'laptop prime',
+     {
+      id:'5',
+      title:'laptop prime',
      description:'Ordinateur portable'
       ,
      img:[
@@ -91,10 +123,17 @@ export class MarketPage implements OnInit {
      category:'vetement',
      state:'neuf',
      city:'Bafoussam',
-     avStart:2
+     avStart:2,
+     disponible:{
+      dispo:true,
+      type: 'livraison',
+      frais:1000,
+    }
      },
      //////////////img6///////////////////
-     {title:'costa',
+     {
+      id:'6',
+      title:'costa',
      description:'Ordinateur portable  '
       ,
      img:[
@@ -106,10 +145,17 @@ export class MarketPage implements OnInit {
      category:'vetement',
      state:'neuf',
      city:'Ebolowa',
-     avStart:2
+     avStart:2,
+     disponible:{
+      dispo:true,
+      type: 'livraison',
+      frais:1000,
+    }
      },
      //////////////img7///////////////////
-     {title:'desktop',
+     {
+      id:'7',
+      title:'desktop',
      description:'Ordinateur portable'
       ,
      img:[
@@ -121,7 +167,12 @@ export class MarketPage implements OnInit {
      category:'vetement',
      state:'neuf',
      city:'Kribi',
-     avStart:2
+     avStart:2,
+     disponible:{
+      dispo:true,
+      type: 'livraison',
+      frais:1000,
+    }
      }
     ]
    
@@ -178,9 +229,13 @@ export class MarketPage implements OnInit {
       autoplay:true,
       loop:true
        };
-       fab(){
-
-        console.log("bonjour");
+       fab(Autre1:string){
+         
+        if(Autre1.length>0){
+          this.fab_data=Autre1;
+          console.log("bonjour::"+this.fab_data);
+        }
+       
        }
 
       

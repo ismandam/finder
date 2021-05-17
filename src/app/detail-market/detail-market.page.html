@@ -1,6 +1,6 @@
 <ion-header>
   
-  <ion-toolbar class="findercolor" *ngIf="data != null" >
+  <ion-toolbar class="findercolor" *ngIf="productDetail!= null" >
     <ion-buttons id="menubtn" slot="start">
       <ion-back-button id="menubtn" class="findercolor" ></ion-back-button>
      
@@ -19,46 +19,46 @@
       <ion-icon class="startcolor"  slot="start" icon="share1"></ion-icon>&nbsp;
         
      </ion-button>
-     <ion-title>{{data.title}}</ion-title>
+     <ion-title>{{productDetail.title}}</ion-title>
       
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-card *ngIf="data != null">
+  <ion-card *ngIf="productDetail != null">
     <ion-slides pager [options]="slideOptions"  >
       <ion-slide >
-        <img src="{{data.img[0]}}" *ngIf="data.img[0] != null" alt="Image">
+        <img src="{{productDetail.img[0]}}" *ngIf="productDetail.img[0] != null" alt="Image">
       </ion-slide>
       <ion-slide>
-        <img src="{{data.img[1]}}" *ngIf="data.img[1] != null" alt="Image">
+        <img src="{{productDetail.img[1]}}" *ngIf="productDetail.img[1] != null" alt="Image">
       </ion-slide>
       <ion-slide>
-        <img src="{{data.img[2]}}" *ngIf="data.img[2] != null" alt="Image">
+        <img src="{{productDetail.img[2]}}" *ngIf="productDetail.img[2] != null" alt="Image">
       </ion-slide>
     </ion-slides>
     
     <ion-chip class="chip5">
-      <ion-label >Categorie: {{data.category}}</ion-label>
+      <ion-label >Categorie: {{productDetail.category}}</ion-label>
     </ion-chip>
    <ion-chip class="chip4">
-     <ion-label >{{data.description}}</ion-label>
+     <ion-label >{{productDetail.description}}</ion-label>
    </ion-chip>
    <ion-chip class="chip3">
-    <ion-label>Etat du produit: {{data.state}}</ion-label>
+    <ion-label>Etat du produit: {{productDetail.state}}</ion-label>
   </ion-chip>
 
   <ion-chip class="chip2">
-    <ion-label>ville: {{data.city}}</ion-label>
+    <ion-label>ville: {{productDetail.city}}</ion-label>
   </ion-chip>
   <ion-chip class="chip1">
-    <ion-label>prix: {{data.price | currency}}</ion-label>
+    <ion-label>prix: {{productDetail.price | currency}}</ion-label>
   </ion-chip>
   <ion-card-content>
     <ion-card-title>
 
   </ion-card-title>
-  <h2>{{data.price}}</h2>
+  <h2>{{productDetail.price}}</h2>
    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eligendi? Accusantium, doloribus? Laboriosam iure quisquam, quia, ut a eveniet exercitationem blanditiis tempora consectetur molestias saepe! Dolorem, ipsam? Unde, obcaecati voluptates?</p>
       
     </ion-card-content>
@@ -69,7 +69,7 @@
     <ion-buttons padding class="btncenter">
     <ion-row padding >   
     <ion-col >
-      <ion-button class="findercolor">
+      <ion-button class="findercolor" (click)="AddTocart(productDetail)">
         <ion-icon ion-button class="starcolor" name="cart" >&nbsp; 
         </ion-icon>&nbsp; 
            Ajouter un produit dans votre panier

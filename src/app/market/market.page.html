@@ -4,7 +4,7 @@
       <ion-menu-button ></ion-menu-button>
     </ion-buttons>
  
-   <ion-title>Market:{{data1}}</ion-title>
+   <ion-title>Market:{{fab_data}}</ion-title>
   </ion-toolbar>
   
 </ion-header>
@@ -18,41 +18,41 @@
       <ion-icon name="add" ></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="top" >
-      <ion-fab-button class="fabsecond" data-desc="deconexion"  (click)="log_out()">
+      <ion-fab-button class="fabsecond" data-desc="Autre"  (click)="fab('Autre')">
         <ion-icon name="log-out"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button class="fabsecond" data-desc="vetements"  (click)="fab()">
+      <ion-fab-button class="fabsecond" data-desc="Vetements"  (click)="fab('Vetements')">
         <ion-icon name="shirt"></ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button class="fabsecond" data-desc="chaussure"  (click)="fab()">
+      <ion-fab-button class="fabsecond" data-desc="Chaussure"  (click)="fab('Chaussure')">
         <ion-icon name="shirt"></ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button class="fabsecond" data-desc="bijoux"  (click)="fab()">
+      <ion-fab-button class="fabsecond" data-desc="Bijoux"  (click)="fab('Bijoux')">
         <ion-icon name="diamond1"></ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button class="fabsecond" data-desc="sac"  (click)="fab()">
+      <ion-fab-button class="fabsecond" data-desc="Sac"  (click)="fab('Sac')">
         <ion-icon name="bag-remove"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button class="fabsecond" data-desc="beauté"  (click)="fab()">
+      <ion-fab-button class="fabsecond" data-desc="Beauté"  (click)="fab('Beauté')">
         <ion-icon name="umbrella"></ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button class="fabsecond" data-desc="mode"  (click)="fab()">
+      <ion-fab-button class="fabsecond" data-desc="Mode"  (click)="fab('Mode')">
         <ion-icon name="woman"></ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button class="fabsecond" data-desc="électroniques"  (click)="fab()">
+      <ion-fab-button class="fabsecond" data-desc="Electroniques"  (click)="fab('Electroniques')">
         <ion-icon name="tablet-landscape"></ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button class="fabsecond" data-desc="voitures"  (click)="fab()">
+      <ion-fab-button class="fabsecond" data-desc="Voitures"  (click)="fab('Voitures')">
         <ion-icon name="tablet-landscape"></ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button class="fabsecond" data-desc="immobilier"  (click)="fab()">
+      <ion-fab-button class="fabsecond" data-desc="Immobilier"  (click)="fab('Immobilier')">
         <ion-icon name="home"></ion-icon>
       </ion-fab-button>
 
@@ -61,102 +61,7 @@
   <ion-header>
 
     <ion-toolbar  class="headerpad">
-<!-- 
-      <ion-buttons >
-        <ion-slides  pager [options]="slideOptions" >
-          <ion-slide>
-        <ion-row><ion-col class="buttoncol">
-          <ion-button  >
-            <ion-icon class="starcolor" ion-button name="shirt" large >
-            
-            </ion-icon>
-          </ion-button>&nbsp; 
-          <ion-label>vetements</ion-label>
-        </ion-col></ion-row>
-     
-        
-        <ion-row><ion-col class="buttoncol">
-          <ion-button  >
-            <ion-icon class="starcolor" ion-button name="shirt" large >
-            
-            </ion-icon>
-          </ion-button>&nbsp; 
-          <ion-label>chaussure</ion-label>
-        </ion-col></ion-row>
 
-        <ion-row><ion-col class="buttoncol">
-          <ion-button  >
-            <ion-icon class="starcolor" ion-button name="diamond1" large >
-              
-            </ion-icon>
-          </ion-button>&nbsp; 
-          <ion-label>bijoux</ion-label>
-        </ion-col></ion-row>
-      </ion-slide>
-      <ion-slide>
-        
-      
-      
-        <ion-row><ion-col class="buttoncol">
-          <ion-button  >
-            <ion-icon class="starcolor" ion-button name="bag-remove" large >
-            
-            </ion-icon>
-          </ion-button>&nbsp; 
-          <ion-label>sac</ion-label>
-        </ion-col></ion-row>
-
-        <ion-row><ion-col class="buttoncol">
-          <ion-button  >
-            <ion-icon class="starcolor" ion-button name="umbrella" large >
-              
-            </ion-icon>
-          </ion-button>&nbsp; 
-          <ion-label>beauté</ion-label>
-        </ion-col></ion-row>
-
-        <ion-row><ion-col class="buttoncol">
-          <ion-button  >
-            <ion-icon class="starcolor" ion-button name="woman" large >
-            
-            </ion-icon>
-          </ion-button>&nbsp; 
-          <ion-label>mode</ion-label>
-        </ion-col></ion-row>
-      </ion-slide>
-      <ion-slide>
-        <ion-row><ion-col class="buttoncol">
-          <ion-button  >
-            <ion-icon class="starcolor" ion-button name="tablet-landscape" large >
-              
-            </ion-icon>
-          </ion-button>&nbsp; 
-          <ion-label>électroniques</ion-label>
-        </ion-col></ion-row>
-      
-      
-        <ion-row><ion-col class="buttoncol">
-          <ion-button  >
-            <ion-icon class="starcolor" ion-button name="bag-remove" large >
-            
-            </ion-icon>
-          </ion-button>&nbsp; 
-          <ion-label>voitures</ion-label>
-        </ion-col></ion-row>
-
-        <ion-row><ion-col class="buttoncol">
-          <ion-button  >
-            <ion-icon class="starcolor" ion-button name="home" large >
-            
-            </ion-icon>
-          </ion-button>&nbsp; 
-          <ion-label>Mobiliers</ion-label>
-        </ion-col></ion-row>
-      </ion-slide>
-      </ion-slides>
-    
-      </ion-buttons>
--->
       <ion-searchbar
           *ngIf="toggled"
           showCancelbutton="always"
@@ -169,7 +74,7 @@
 
       </ion-icon>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
     <ion-list>
      <ion-item *ngFor="let product of data|filter:searchTerm" type="ion-button" (click)="marketlistener(product)">
       <ion-thumbnail slot="start">

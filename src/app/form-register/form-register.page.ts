@@ -15,7 +15,7 @@ private contact_number:string="";
 private addresse:string="";
 private email:string="";
 private pasword:string="";
-private url="http://192.168.100.62/finder/super/ionic_api.php";
+private url="http://192.168.100.69/finder/super/ionic_api.php";
  private respons:any;
 
   constructor(
@@ -32,7 +32,7 @@ private url="http://192.168.100.62/finder/super/ionic_api.php";
  async register(){
   return new Promise((resolve) => {
   let body ={
-    action:'ionic_register',
+    action0:'ionic_register',
     firstname:this.first_name,
     lastname:this.last_name,
     contact_number:this.contact_number,

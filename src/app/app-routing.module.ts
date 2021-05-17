@@ -55,10 +55,7 @@ const routes: Routes = [
     path: 'vandre',
     loadChildren: () => import('./vandre/vandre.module').then( m => m.VandrePageModule)
   },
-  {
-    path: 'marke-user',
-    loadChildren: () => import('./marke-user/marke-user.module').then( m => m.MarkeUserPageModule)
-  },
+  
   {
     path: 'add-cni',
     loadChildren: () => import('./add-cni/add-cni.module').then( m => m.AddCniPageModule)

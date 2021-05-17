@@ -1,11 +1,52 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="findercolor" >
     <ion-title>cart</ion-title>
+    <ion-label slot="end">Total achat:{{total}} Frc cfa</ion-label>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let article of cartData; let i =index"  >
+    <ion-item-sliding>
+    <ion-item  >
+     <ion-thumbnail slot="start">
+       <img [src]="article.item.img[0]" >
+      </ion-thumbnail>
+      <ion-label>
+      <h3>{{ article.item.title}}</h3>
+      <p>
+        <ion-badge> {{article.quantite}} </ion-badge>x{{article.item.price}}
+      </p>
+      <p *ngIf="article.item.disponible">
+        Livraison : {{article.item.disponible.frais}} Frc cfa
+        
+      </p>
+      <p *ngIf="article.item.disponible"> Total: {{article.item.disponible.frais + (article.quantite * article.item.price)}} frc cfa </p>
+     
+      <ion-button  class="findercolor" (click)="mail()">
+        <ion-icon ion-button class="starcolor" name="mail">&nbsp; 
+        </ion-icon>&nbsp; 
+           Contactez le vendeur 
+      </ion-button> 
+      </ion-label>
+      <ion-button   class="findercolor" slot="end" icon-only clear (click)="mail()">
+        <ion-icon   class="starcolor"  icon="remove-circle">&nbsp; 
+        </ion-icon>&nbsp; 
+           
+      </ion-button> 
+    
+    </ion-item >
 
+    <ion-item-options side="end" *ngIf="article.item.id">
+
+    <ion-item-option color="danger" (click)="delet_article(article,i)">
+    <ion-icon icon="trash"></ion-icon>
+    </ion-item-option>
+
+    </ion-item-options>
+  </ion-item-sliding>
+   </ion-list>
+ 
 </ion-content>
 <ion-footer class="ion-no-border" >
   <ion-grid >

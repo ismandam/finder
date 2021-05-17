@@ -53,6 +53,7 @@ export class FolderPage implements OnInit {
           setTimeout(()=>{event.target.complete();},200);
        
          }
+       //  console.log("affiche l'ID== :"+infos['Id'])
         console.log(" toutes les infos de ton API :"+this.allInfos)
       }, error=>{
         console.log(error);

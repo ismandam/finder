@@ -4,7 +4,7 @@
       <ion-back-button id="menubtn" class="findercolor" ></ion-back-button>
      
     </ion-buttons>
-    
+  
  
    <ion-title>Enrégistrez un produit à vendre</ion-title>
   </ion-toolbar>
@@ -12,6 +12,8 @@
 </ion-header>
 
 <ion-content>
+  <ion-slides>
+    
   <div class="marg">
   <ion-list class="ion-padding">
     <ion-item >
@@ -34,17 +36,17 @@
         <ion-item>
           <ion-label class="label" position="floating">Categorie du produit</ion-label>
         <ion-select  placeholder="vetements" [(ngModel)]="categorie" >
-          <ion-select-option value="v">vetements</ion-select-option>
-          <ion-select-option value="c">chaussure</ion-select-option>
-          <ion-select-option value="b">bijoux</ion-select-option>
-          <ion-select-option value="s">sac</ion-select-option>
-          <ion-select-option value="be">beauté</ion-select-option>
-          <ion-select-option value="m">mode</ion-select-option>
-          <ion-select-option value="e">électroniques</ion-select-option>
-          <ion-select-option value="v">voitures</ion-select-option>
-          <ion-select-option value="i">immobilier</ion-select-option>
-          <ion-select-option value="q">Quincaillerie</ion-select-option>
-          <ion-select-option value="a">Autre</ion-select-option>
+          <ion-select-option value="Vetements">Vetements</ion-select-option>
+          <ion-select-option value="Chaussure">Chaussure</ion-select-option>
+          <ion-select-option value="Bijoux">Bijoux</ion-select-option>
+          <ion-select-option value="Sac">Sac</ion-select-option>
+          <ion-select-option value="Beauté">Beauté</ion-select-option>
+          <ion-select-option value="Mode">Mode</ion-select-option>
+          <ion-select-option value="Electroniques">Electroniques</ion-select-option>
+          <ion-select-option value="Voitures">Voitures</ion-select-option>
+          <ion-select-option value="Immobilier">Immobilier</ion-select-option>
+          <ion-select-option value="Quincaillerie">Quincaillerie</ion-select-option>
+          <ion-select-option value="Autre">Autre</ion-select-option>
         </ion-select>
       </ion-item>&nbsp;
      
@@ -52,17 +54,38 @@
         <ion-item>  
           <ion-label class="label" position="floating">Etat du produit</ion-label>
         <ion-select  placeholder="Neuf"  [(ngModel)]="etat">
-          <ion-select-option value="n">Neuf</ion-select-option>
-          <ion-select-option value="p">Premier choix</ion-select-option>
-          <ion-select-option value="d">Dexième choix</ion-select-option>
-          <ion-select-option value="t">Troixième choix</ion-select-option>
+          <ion-select-option value="Neuf">Neuf</ion-select-option>
+          <ion-select-option value="Premier choix">Premier choix</ion-select-option>
+          <ion-select-option value="Dexième choix">Dexième choix</ion-select-option>
+          <ion-select-option value="Troixième choix">Troixième choix</ion-select-option>
         </ion-select>
       </ion-item>
+
+      <ion-item>
+        <ion-label class="label" position="floating">Prix du produit</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="prix"
+         [(ngModel)]="prix" >  </ion-input>
+       </ion-item>&nbsp;
+       <ion-item>
+        <ion-label class="label" position="floating">Votre contact</ion-label>
+        <ion-input class="ion-text-center"  type="number" name="contact"
+         [(ngModel)]="contact" >  </ion-input>
+       </ion-item>&nbsp;
+       <ion-item>
+        <ion-label class="label" position="floating">Votre ville</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="ville"
+         [(ngModel)]="ville" >  </ion-input>
+       </ion-item>&nbsp;
+       <ion-item>
+        <ion-label class="label" position="floating">Votre cartier</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="cartier"
+         [(ngModel)]="cartier" >  </ion-input>
+       </ion-item>&nbsp;
       
       <!--submit button -->
         <div class="container-form-btn">
-            <ion-button  class="form-btn"  (click)="send_data()" >
-              <ion-icon ion-button  name="send">&nbsp; 
+            <ion-button  class="findercolor" (click)="send_data()" >
+              <ion-icon ion-button  class="starcolor" name="send">&nbsp; 
               </ion-icon>&nbsp; 
               Erégistrez votre produit
             </ion-button> 
@@ -70,6 +93,8 @@
 
       </ion-list>
 </div>
+
+</ion-slides>
 </ion-content>
 <ion-footer class="ion-no-border" >
   <ion-toolbar  class="foot" >

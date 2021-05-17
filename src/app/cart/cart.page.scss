@@ -1,47 +1,76 @@
 ion-menu-button {
-    color:white;
+  color:white;
+  
+}
+.findercolor{
+ // --background: var(--ion-color-finder);
+ --background:#9651DA;
+  color:white;
+  }
+  .search{
+  padding-inline-end: 10px;
+  align-self: center;
+  color: white;
+  
+
+  }
+  .buttoncol{
+    
+   // color:rgb(245, 241, 6);
+      margin-right: 10%;
+      margin-left: 20%;
+      margin-block-end: 10%;
+     
+      padding: auto;
     
   }
-  .findercolor{
-   // --background: var(--ion-color-finder);
-   --background:#9651DA;
-    color:white;
-    }
-    .search{
-    padding-inline-end: 10px;
-    align-self: center;
-    color: white;
-    
+  .headerpad{
+    --background:#9651DA;
+    color:rgba(240, 240, 240, 0.562);
+    height:70px;
+  }
+  .footerpos{
+ padding-inline-end: 0%;
+   margin-right: 25%;
+  }
+  .starcolor{
   
-    }
-    .buttoncol{
-      
-     // color:rgb(245, 241, 6);
-        margin-right: 10%;
-        margin-left: 20%;
-        margin-block-end: 10%;
-       
-        padding: auto;
-      
-    }
-    .headerpad{
-      --background:#9651DA;
-      color:rgba(240, 240, 240, 0.562);
-      height:70px;
-    }
-    .footerpos{
-   padding-inline-end: 0%;
-     margin-right: 25%;
-    }
-    .starcolor{
-     color: yellow;
+   color: yellow;
 
-    }
-    .sharecol{
-      color:#9651DA;
-    }
-    .btncenter{
-      display:flex;
-      justify-content: center;
+  }
+  .fabcolor{
+    --background: var(--ion-color-finder);
+   // background-color: #9651DA;
+  }
+  .fabsecond{
+    --background: var(--ion-color-finder2);
+  }
+  .sharecol{
+   
+    color:#9651DA;
+  }
+  .btncenter{
+    display:flex;
+    justify-content: center;
+   
+   }
+  .fabbtn{
      
-     }
+    margin-bottom: 30px;
+  
+   }
+   ion-fab-button[data-desc]{
+     position:relative;
+   }
+ion-fab-button[data-desc]::after{
+position: absolute;
+content:attr(data-desc);
+z-index: 1;
+right: 55px;
+bottom:4px;
+background-color: var(--ion-color-finder);
+padding:9px;
+border-radius:15px;
+color:rgb(255, 255, 255);
+box-shadow:0 3px 5px -1px rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.14),0 1px 18px 0 rgba(0,0,0,0.12);
+}
