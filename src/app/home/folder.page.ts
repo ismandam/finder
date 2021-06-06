@@ -48,12 +48,15 @@ export class FolderPage implements OnInit {
     getInfos(event:any){
   
       this.service.getAllInfo().subscribe(infos =>{
-        this.allInfos = infos;
+        this.allInfos = infos['cni'];
+        //this.allInfos=Array.of(infos['product']);
+        
+        this.allInfos = JSON.parse(JSON.stringify(this.allInfos));
         if(event){
           setTimeout(()=>{event.target.complete();},200);
        
          }
-       //  console.log("affiche l'ID== :"+infos['Id'])
+         console.log("affiche l'ID== :"+infos)
         console.log(" toutes les infos de ton API :"+this.allInfos)
       }, error=>{
         console.log(error);

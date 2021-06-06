@@ -1,0 +1,49 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:amazon="http://schemas.amazon.com/apk/res/android"
+3    xmlns:android="http://schemas.android.com/apk/res/android"
+4    package="capacitor.android.plugins"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="21"
+9-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+10        android:targetSdkVersion="29" />
+10-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+11
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:1-76
+12-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:18-74
+13
+14    <application android:requestLegacyExternalStorage="true" >
+14-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-10:15
+14-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:14-57
+15        <provider
+15-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-8:12
+16            android:name="org.apache.cordova.camera.FileProvider"
+16-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-64
+17            android:authorities="${applicationId}.cordova.plugin.camera.provider"
+17-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:65-134
+18            android:exported="false"
+18-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:135-159
+19            android:grantUriPermissions="true" >
+19-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:160-194
+20            <meta-data
+20-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:3-112
+21                android:name="android.support.FILE_PROVIDER_PATHS"
+21-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:14-64
+22                android:resource="@xml/camera_provider_paths" />
+22-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:65-110
+23        </provider>
+24
+25        <activity
+25-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-151
+26            android:name="com.synconset.MultiImageChooserActivity"
+26-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:50-104
+27            android:label="@string/multi_app_name"
+27-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:11-49
+28            android:theme="@style/Theme.AppCompat.Light" />
+28-->D:\finder\finder\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:105-149
+29    </application>
+30
+31</manifest>

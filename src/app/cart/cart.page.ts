@@ -4,6 +4,7 @@ import {Storage} from '@ionic/storage';
 import { itemCart } from '../models/iinterface_itemCart';
 import { Product } from '../models/interface_product';
 
+
 @Component({
   selector: 'app-cart',
  // selector: 'modal-page',
@@ -13,13 +14,13 @@ import { Product } from '../models/interface_product';
 export class CartPage implements OnInit {
  public cartData:itemCart[];
 public total:number= 0;
+
   constructor(
     public modalctrl:ModalController,
     public storage :Storage,
-    ) {
 
-
-     }
+    
+    ) { }
 
   ngOnInit() {
    this.storage.create();
@@ -39,22 +40,27 @@ public total:number= 0;
 
    })
   }
- closeModal(){
-  // this.storage.clear();
-this.modalctrl.dismiss({
-'dismissed':true
 
-});
+  
 
- }
- delet_article(article_id:Product,index:number):void{
-//this.storage.create();
-this.cartData.splice(index,1);
-this.storage.set("Cart",this.cartData).then((data)=>{
 
-  console.log("mon id est==",data);
-})
+  closeModal(){
+    // this.storage.clear();
+  this.modalctrl.dismiss({
+  'dismissed':true
 
- }
+  });
+
+  }
+
+  delet_article(article_id:Product,index:number):void{
+  //this.storage.create();
+  this.cartData.splice(index,1);
+  this.storage.set("Cart",this.cartData).then((data)=>{
+
+    console.log("mon id est==",data);
+  })
+
+  }
 
 }

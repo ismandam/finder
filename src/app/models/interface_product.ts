@@ -2,13 +2,16 @@ export interface Product{
 id:string;
 title:string;
 description:string;
+detail:string;
 img:string[];
 price:number;
+contact:string;
 category: string;
 state:string;
 city:string;
+cartier:string;
 avStart:number;
-disponible:available;
+disponible ?:available;
 }
 
 export interface available{
@@ -20,3 +23,13 @@ export interface available{
   frais ?:number;
 
 }
+/*
+nom_produit:this.nom_produit,
+description:this.description,
+detail:this.detail,
+categorie:this.categorie,
+etat:this.etat,
+prix:this.prix,
+contact:this.contact,
+ville:this.ville,
+cartier:this.cartier,*/

@@ -11,6 +11,7 @@ export class AddCniPage implements OnInit {
 options:any;
 imgres:any;
   constructor(public image:ImagePicker) { }
+  
 imagePicker(){
 this.options= {
   width:200,  

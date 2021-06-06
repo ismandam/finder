@@ -16,6 +16,10 @@
     
   <div class="marg">
   <ion-list class="ion-padding">
+    <ion-item ion-button class="findercolor" (click)="imagePicker()">
+      <ion-icon  slot="start" class="starcolor" name="image">&nbsp; 
+      </ion-icon> Choisir une Image 
+    </ion-item>&nbsp;
     <ion-item >
       <ion-label class="label" position="floating"> Nom du produit</ion-label>
       <ion-input  class="ion-text-center"  type="text" name="nom"
@@ -59,7 +63,7 @@
           <ion-select-option value="Dexième choix">Dexième choix</ion-select-option>
           <ion-select-option value="Troixième choix">Troixième choix</ion-select-option>
         </ion-select>
-      </ion-item>
+      </ion-item>&nbsp;
 
       <ion-item>
         <ion-label class="label" position="floating">Prix du produit</ion-label>
@@ -92,7 +96,7 @@
         </div>&nbsp;&nbsp;
 
       </ion-list>
-</div>
+  </div>
 
 </ion-slides>
 </ion-content>

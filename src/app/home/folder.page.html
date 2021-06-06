@@ -30,7 +30,7 @@
  
   
   <ion-list  >&nbsp;
-   <ion-item  *ngFor="let info of allInfos|filter:searchTerm" type="ion-button" (click)="homelistener(info)" >
+   <ion-item  *ngFor="let info of allInfos |filter:searchTerm" type="ion-button" (click)="homelistener(info)" >
     <ion-thumbnail slot="start">
       <img src="{{info.urlimage}}" *ngIf="info.urlimage != null" alt="Image">
      </ion-thumbnail>

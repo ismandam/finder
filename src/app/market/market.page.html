@@ -44,7 +44,7 @@
         <ion-icon name="woman"></ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button class="fabsecond" data-desc="Electroniques"  (click)="fab('Electroniques')">
+      <ion-fab-button class="fabsecond" data-desc="Electroniques" (click)="fab('Electroniques')">
         <ion-icon name="tablet-landscape"></ion-icon>
       </ion-fab-button>
 
@@ -78,11 +78,13 @@
     <ion-list>
      <ion-item *ngFor="let product of data|filter:searchTerm" type="ion-button" (click)="marketlistener(product)">
       <ion-thumbnail slot="start">
+        <!--   <img [src]="product.data.img[0]" *ngIf="product.data.img[0]!= null" alt="Image"> -->
         <img [src]="product.img[0]" *ngIf="product.img[0]!= null" alt="Image">
        </ion-thumbnail>
        <ion-label>
-       <h3>{{ product.title}}</h3>
+       <h3>{{product.title}}</h3>
        <p>{{product.description}}</p>
+       <p>{{product.city}}:{{product.cartier}}</p>
        <p>{{product.price | currency}}</p>
       
       <span *ngIf="product.avStart>0">
