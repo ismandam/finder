@@ -6,7 +6,8 @@ import { CartPage } from '../cart/cart.page';
 
 import{Storage} from '@ionic/storage';
 import { itemCart } from '../models/iinterface_itemCart';
-import { Product } from '../models/interface_product';
+//import { Product } from '../models/interface_product';
+import {interfaceItem}from'../models/interfaceClass';
 
 @Component({
   selector: 'app-detail-market',
@@ -48,19 +49,19 @@ export class DetailMarketPage implements OnInit {
         return await modal.present();
 
      }
-
-     AddTocart(productDetail:Product ){
+ 
+     AddTocart(productDetail_:interfaceItem){
        let added:boolean=false;
        this.storage.create();
       this.storage.get("Cart").then((data:itemCart[])=>{
-          console.log(" valeur de"+productDetail.price);
+          console.log(" valeur de"+productDetail_.price);
         //test si il n'y a pas d'article dans la bd///
         if(data==null||data.length==0){
           data=[];
          data.push({
-           item:productDetail,
+           item:productDetail_,
            quantite:1,
-           prix : productDetail.price
+           prix : productDetail_.price
          })
 
           }else 
@@ -70,17 +71,17 @@ export class DetailMarketPage implements OnInit {
             for(let i=0;i<data.length;i++){
             ///test si le panier contient l'article////////
               const element:itemCart=data[i];
-              if(productDetail.id==element.item.id){
+              if(productDetail_.id==element.item.id){
                 element.quantite += 1 ;
-                element.prix += productDetail.price;
+                element.prix += productDetail_.price;
                 added=true;
               }
             } 
             if(!added){
               data.push({
-                item:productDetail,
+                item:productDetail_,
                 quantite:1,
-                prix:productDetail.price
+                prix:productDetail_.price
               })
            }
           }

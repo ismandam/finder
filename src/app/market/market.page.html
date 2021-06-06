@@ -36,7 +36,7 @@
       <ion-fab-button class="fabsecond" data-desc="Sac"  (click)="fab('Sac')">
         <ion-icon name="bag-remove"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button class="fabsecond" data-desc="Beauté"  (click)="fab('Beauté')">
+      <ion-fab-button class="fabsecond" data-desc="Beauté"  (click)="fab('Beaute')">
         <ion-icon name="umbrella"></ion-icon>
       </ion-fab-button>
 
@@ -76,10 +76,10 @@
     </ion-toolbar>
 </ion-header>
     <ion-list>
-     <ion-item *ngFor="let product of data|filter:searchTerm" type="ion-button" (click)="marketlistener(product)">
+     <ion-item *ngFor="let product of tmp_data|filter:searchTerm" type="ion-button" (click)="marketlistener(product)">
       <ion-thumbnail slot="start">
         <!--   <img [src]="product.data.img[0]" *ngIf="product.data.img[0]!= null" alt="Image"> -->
-        <img [src]="product.img[0]" *ngIf="product.img[0]!= null" alt="Image">
+        <img [src]="product.img[0]" *ngIf="product.img!= null" alt="Image">
        </ion-thumbnail>
        <ion-label>
        <h3>{{product.title}}</h3>

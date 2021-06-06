@@ -19,7 +19,7 @@
       <ion-icon class="startcolor"  slot="start" icon="share1"></ion-icon>&nbsp;
         
      </ion-button>
-     <ion-title>{{productDetail.title}}</ion-title>
+     <ion-title>{{productDetail.nom_produit}}</ion-title>
       
   </ion-toolbar>
 </ion-header>
@@ -28,18 +28,18 @@
   <ion-card *ngIf="productDetail != null">
     <ion-slides pager [options]="slideOptions"  >
       <ion-slide >
-        <img src="{{productDetail.img[0]}}" *ngIf="productDetail.img[0] != null" alt="Image">
+        <img src="{{productDetail.img[0]}}" *ngIf="productDetail.img != null" alt="Image">
       </ion-slide>
       <ion-slide>
-        <img src="{{productDetail.img[1]}}" *ngIf="productDetail.img[1] != null" alt="Image">
+        <img src="{{productDetail.img[1]}}" *ngIf="productDetail.img != null" alt="Image">
       </ion-slide>
       <ion-slide>
-        <img src="{{productDetail.img[2]}}" *ngIf="productDetail.img[2] != null" alt="Image">
+        <img src="{{productDetail.img[2]}}" *ngIf="productDetail.img!= null" alt="Image">
       </ion-slide>
     </ion-slides>
     
     <ion-chip class="chip5">
-      <ion-label >Categorie: {{productDetail.category}}</ion-label>
+      <ion-label >Categorie: {{productDetail.categorie}}</ion-label>
     </ion-chip>
    <ion-chip class="chip4">
      <ion-label >{{productDetail.description}}</ion-label>
@@ -49,7 +49,7 @@
   </ion-chip>
 
   <ion-chip class="chip2">
-    <ion-label>ville: {{productDetail.city}}</ion-label>
+    <ion-label>ville: {{productDetail.city}}/{{productDetail.cartier}}</ion-label>
   </ion-chip>
   <ion-chip class="chip1">
     <ion-label>prix: {{productDetail.price | currency}}</ion-label>

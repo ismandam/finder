@@ -1,4 +1,5 @@
-export interface Product{
+
+/*export interface Product{
 id:string;
 title:string;
 description:string;
@@ -12,7 +13,7 @@ city:string;
 cartier:string;
 avStart:number;
 disponible ?:available;
-}
+}*/
 
 export interface available{
     //si article dispo 

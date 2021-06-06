@@ -1,6 +1,7 @@
-import {Product} from './interface_product';
+//import {Product} from './interface_product';
+import {interfaceItem}from'../models/interfaceClass';
 export interface itemCart{
-item: Product;
+item: interfaceItem;
 quantite:number;
 prix:number;
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import {Storage} from '@ionic/storage';
 import { itemCart } from '../models/iinterface_itemCart';
-import { Product } from '../models/interface_product';
+//import { Product } from '../models/interface_product';
 
 
 @Component({
@@ -28,11 +28,12 @@ public total:number= 0;
    then((data:itemCart[])=>{
    this.cartData=data;
    this.cartData.forEach((element:itemCart)=>{
-     if(element.item.disponible.type ==="Disponible en magasin"){
-      element.item.disponible.frais=0;
-      
+     if(element.item.disponible[2] ==="Disponible en magasin"){
+      element.item.disponible[1]=0;
+     
      }
-     this.total += (element.quantite*element.item.price + element.item.disponible.frais);
+     this.total += (element.quantite*element.item.price + element.item.disponible[1]);
+    
    })
 
    }).catch(err=>{
@@ -53,7 +54,7 @@ public total:number= 0;
 
   }
 
-  delet_article(article_id:Product,index:number):void{
+  delet_article(article_id:itemCart,index:number):void{
   //this.storage.create();
   this.cartData.splice(index,1);
   this.storage.set("Cart",this.cartData).then((data)=>{
