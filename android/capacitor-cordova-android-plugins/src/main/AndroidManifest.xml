@@ -6,6 +6,9 @@ xmlns:amazon="http://schemas.amazon.com/apk/res/android">
 <provider android:name="org.apache.cordova.camera.FileProvider" android:authorities="${applicationId}.cordova.plugin.camera.provider" android:exported="false" android:grantUriPermissions="true">
   <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/camera_provider_paths"/>
 </provider>
+<provider android:name="de.appplant.cordova.emailcomposer.Provider" android:authorities="${applicationId}.emailcomposer.provider" android:exported="false" android:grantUriPermissions="true">
+  <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/emailcomposer_provider_paths"/>
+</provider>
 <activity android:label="@string/multi_app_name" android:name="com.synconset.MultiImageChooserActivity" android:theme="@style/Theme.AppCompat.Light"/>
 </application>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>

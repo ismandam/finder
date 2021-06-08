@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cart_form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="form" (ngSubmit)="submitForm()" enctype="multipart/form-data">
+   
+    <ion-item class="inputField" style="display: block;">
+      <ion-label floating>Laisez un mail au vendeur</ion-label>
+      <ion-textarea [(ngModel)]="Mail" name="description" ></ion-textarea>
+    </ion-item>
+    
+    <button ion-button  class="btn_response" type="submit" color="toolbar" block icon-only><span>Poster</span></button>
+  </form>
+
+
+</ion-content>
+<ion-footer class="ion-no-border" >
+  <ion-grid >
+    <ion-buttons padding class="btncenter">
+    <ion-row padding  >   
+    <ion-col >
+      <ion-button class="findercolor" (click)="closeModal()">
+        <ion-icon ion-button class="starcolor" name="camera">&nbsp; 
+        </ion-icon>&nbsp; 
+           fermez
+      </ion-button> 
+    </ion-col>
+    
+  </ion-row>
+  
+  </ion-buttons>
+  </ion-grid>
+    
+  
+  
+  </ion-footer>

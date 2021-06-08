@@ -9,9 +9,35 @@
   
 </ion-header>
 
+<ion-header  slot="fixed">
 
+  <ion-toolbar  class="headerpad">
 
-<ion-content [fullscreen]="true">
+    <ion-searchbar
+        *ngIf="toggled"
+        showCancelbutton="always"
+        animated="true"
+        (ionCancel)="toggleSearch()"
+        animated [(ngModel)]="searchTerm"
+        >
+    </ion-searchbar>
+    <ion-icon class="search" ion-button slot="end" *ngIf="!toggled" (click)="toggle()" name="search" >
+
+    </ion-icon>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content >
+ 
+  <ion-refresher slot="fixed"(ionRefresh)="getInfos($event)">
+    <ion-refresher-content
+    pullingIcon="chevron-down-circle-outline"
+    refreshingSpinner="crescent"
+    refreshingText="refreshing">
+     
+    </ion-refresher-content>
+  </ion-refresher>
 
   <ion-fab class="fabbtn" horizontal="end" vertical="bottom" slot="fixed" edge>
     <ion-fab-button class="fabcolor" >
@@ -58,23 +84,6 @@
 
     </ion-fab-list>
   </ion-fab>
-  <ion-header>
-
-    <ion-toolbar  class="headerpad">
-
-      <ion-searchbar
-          *ngIf="toggled"
-          showCancelbutton="always"
-          animated="true"
-          (ionCancel)="toggleSearch()"
-          animated [(ngModel)]="searchTerm"
-          >
-      </ion-searchbar>
-      <ion-icon class="search" ion-button slot="end" *ngIf="!toggled" (click)="toggle()" name="search" >
-
-      </ion-icon>
-    </ion-toolbar>
-</ion-header>
     <ion-list>
      <ion-item *ngFor="let product of tmp_data|filter:searchTerm" type="ion-button" (click)="marketlistener(product)">
       <ion-thumbnail slot="start">
@@ -127,7 +136,7 @@
 </ion-row>
 <ion-row  >   
   <ion-col >
-    <ion-button class="findercolor">
+    <ion-button class="findercolor" (click)="service_form()">
       <ion-icon ion-button class="starcolor" name="camera">&nbsp; 
       </ion-icon>&nbsp; 
          Vendez un service

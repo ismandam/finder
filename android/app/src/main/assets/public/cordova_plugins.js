@@ -26,6 +26,14 @@
         ]
         },
       {
+          "id": "cordova-plugin-email-composer.EmailComposer",
+          "file": "plugins/cordova-plugin-email-composer/www/email_composer.js",
+          "pluginId": "cordova-plugin-email-composer",
+        "clobbers": [
+          "cordova.plugins.email"
+        ]
+        },
+      {
           "id": "cordova-plugin-camera.camera",
           "file": "plugins/cordova-plugin-camera/www/Camera.js",
           "pluginId": "cordova-plugin-camera",
@@ -46,6 +54,7 @@
     // TOP OF METADATA
     {
       "cordova-plugin-camera": "5.0.1",
+      "cordova-plugin-email-composer": "0.9.2",
       "cordova-plugin-telerik-imagepicker": "2.3.5"
     };
     // BOTTOM OF METADATA

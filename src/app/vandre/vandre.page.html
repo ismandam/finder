@@ -11,8 +11,8 @@
   
 </ion-header>
 
-<ion-content>
-  <ion-slides>
+<ion-content [fullscreen]="true">
+  
     
   <div class="marg">
   <ion-list class="ion-padding">
@@ -71,6 +71,18 @@
          [(ngModel)]="prix" >  </ion-input>
        </ion-item>&nbsp;
        <ion-item>
+        <ion-label class="label" position="floating">Frais de livraison</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="frais"
+         [(ngModel)]="frais" >  </ion-input>
+       </ion-item>&nbsp;
+       <ion-item>  
+        <ion-label class="label" position="floating">Disponibilité</ion-label>
+      <ion-select  placeholder="disponibilité"  [(ngModel)]="dispo">
+        <ion-select-option value="disponible en magasin">disponible en magasin</ion-select-option>
+        <ion-select-option value="non disponible">non disponible</ion-select-option>
+      </ion-select>
+      </ion-item>&nbsp;
+       <ion-item>
         <ion-label class="label" position="floating">Votre contact</ion-label>
         <ion-input class="ion-text-center"  type="number" name="contact"
          [(ngModel)]="contact" >  </ion-input>
@@ -98,7 +110,7 @@
       </ion-list>
   </div>
 
-</ion-slides>
+
 </ion-content>
 <ion-footer class="ion-no-border" >
   <ion-toolbar  class="foot" >

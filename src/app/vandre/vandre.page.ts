@@ -4,6 +4,7 @@ import{HttpClient} from '@angular/common/http';
 import{MyserviceService} from '../myservice.service';
 import { NavigationExtras, Router } from '@angular/router';
 import{ImagePicker} from '@ionic-native/image-picker/ngx';
+import{AlertController} from '@ionic/angular';
 @Component({
   selector: 'app-vandre',
   templateUrl: './vandre.page.html',
@@ -16,6 +17,8 @@ private detail:string="";
 private description:string="";
 private nom_produit:string="";
 private prix:string="";
+private frais:string="";
+private dispo:string="";
 private contact:string="";
 private ville:string="";
 private cartier:string="";

@@ -1,0 +1,123 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="findercolor" >
+    <ion-buttons id="menubtn" slot="start">
+      <ion-back-button id="menubtn" class="findercolor" ></ion-back-button>
+     
+    </ion-buttons>
+  
+ 
+   <ion-title>Enrégistrez un service</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+    
+  <div class="marg">
+  <ion-list class="ion-padding">
+    <ion-item ion-button class="findercolor" (click)="imagePicker()">
+      <ion-icon  slot="start" class="starcolor" name="image">&nbsp; 
+      </ion-icon> Logo de votre entreprise 
+    </ion-item>&nbsp;
+    <ion-item >
+      <ion-label class="label" position="floating">Votre nom</ion-label>
+      <ion-input  class="ion-text-center"  type="text" name="nom"
+       [(ngModel)]="nom_produit" >  </ion-input>
+      </ion-item>&nbsp;
+      <ion-item>
+        <ion-label class="label" position="floating">Type de service</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="desc"
+        [(ngModel)]="type" >  </ion-input>
+       </ion-item>&nbsp;
+  
+     <ion-item>
+      <ion-label class="label" position="floating">Description du service</ion-label>
+      <ion-input class="ion-text-center"  type="text" name="desc"
+      [(ngModel)]="description" >  </ion-input>
+     </ion-item>&nbsp;
+
+     <ion-item>
+      <ion-label class="label" position="floating">Details suplémentaire</ion-label>
+      <ion-input class="ion-text-center"  type="text" name="detail"
+       [(ngModel)]="detail" >  </ion-input>
+     </ion-item>&nbsp;
+
+     
+        <ion-item>  
+          <ion-label class="label" position="floating">Etat du produit</ion-label>
+        <ion-select  placeholder="Neuf"  [(ngModel)]="etat">
+          <ion-select-option value="Neuf">Neuf</ion-select-option>
+          <ion-select-option value="Premier choix">Premier choix</ion-select-option>
+          <ion-select-option value="Dexième choix">Dexième choix</ion-select-option>
+          <ion-select-option value="Troixième choix">Troixième choix</ion-select-option>
+        </ion-select>
+      </ion-item>&nbsp;
+
+      <ion-item>
+        <ion-label class="label" position="floating">Cout du service</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="prix"
+         [(ngModel)]="prix" >  </ion-input>
+       </ion-item>&nbsp;
+       <ion-item>
+        <ion-label class="label" position="floating">Frais suplémentaire</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="frais"
+         [(ngModel)]="frais" >  </ion-input>
+       </ion-item>&nbsp;
+       <ion-item>  
+        <ion-label class="label" position="floating">Disponibilité</ion-label>
+      <ion-select  placeholder="disponibilité"  [(ngModel)]="dispo">
+        <ion-select-option value="disponible">disponible</ion-select-option>
+        <ion-select-option value="Free lance">Free lance</ion-select-option>
+        <ion-select-option value="non disponible 24/24">24/24</ion-select-option>
+        <ion-select-option value="non disponible">non disponible</ion-select-option>
+      </ion-select>
+      </ion-item>&nbsp;
+       <ion-item>
+        <ion-label class="label" position="floating">Votre contact</ion-label>
+        <ion-input class="ion-text-center"  type="number" name="contact"
+         [(ngModel)]="contact" >  </ion-input>
+       </ion-item>&nbsp;
+       
+       <ion-item>
+        <ion-label class="label" position="floating">Votre Pays</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="pays"
+         [(ngModel)]="pays" >  </ion-input>
+       </ion-item>&nbsp;
+
+       <ion-item>
+        <ion-label class="label" position="floating">Votre ville</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="ville"
+         [(ngModel)]="ville" >  </ion-input>
+       </ion-item>&nbsp;
+
+       <ion-item>
+        <ion-label class="label" position="floating">Localisation</ion-label>
+        <ion-input class="ion-text-center"  type="text" name="local"
+         [(ngModel)]="localisation" >  </ion-input>
+       </ion-item>&nbsp;
+      
+      <!--submit button -->
+        <div class="container-form-btn">
+            <ion-button  class="findercolor" (click)="send_data()" >
+              <ion-icon ion-button  class="starcolor" name="send">&nbsp; 
+              </ion-icon>&nbsp; 
+             Prévisualisation de votre profile
+            </ion-button> 
+        </div>&nbsp;&nbsp;
+
+      </ion-list>
+  </div>
+
+
+</ion-content>
+<ion-footer class="ion-no-border" >
+  <ion-toolbar  class="foot" >
+  <p   class="ion-text-center">Finder pour vous servire
+   
+  </p>
+  
+  
+  </ion-toolbar>
+  
+  </ion-footer>

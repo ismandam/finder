@@ -60,6 +60,14 @@ const routes: Routes = [
     path: 'add-cni',
     loadChildren: () => import('./add-cni/add-cni.module').then( m => m.AddCniPageModule)
   },
+  {
+    path: 'cart-form',
+    loadChildren: () => import('./cart-form/cart-form.module').then( m => m.CartFormPageModule)
+  },
+  {
+    path: 'forme-service',
+    loadChildren: () => import('./forme-service/forme-service.module').then( m => m.FormeServicePageModule)
+  },
 
  
 ];

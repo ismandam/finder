@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import{HttpClient} from '@angular/common/http';
 
 const Api="allCni.php"
-//const Info_Api_url="http://192.168.100.69/"+"finder/super/"+Api;
-const Info_Api_url="http://192.168.1.110/"+"finder/super/"+Api;
+const Info_Api_url="http://192.168.100.69/"+"finder/super/"+Api;
+//const Info_Api_url="http://192.168.1.110/"+"finder/super/"+Api;
 
 
 @Injectable({

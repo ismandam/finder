@@ -105,24 +105,21 @@ export class MarketPage implements OnInit {
           console.log("tmp data=="+ this.tmp_data[j])
           //traitement des donnees
           j++;
-        }
-       
-
-    
+        }   
       if(event){
-        setTimeout(()=>{event.target.complete();},200);
+        setTimeout(()=>{event.target;},200);
      
        }
             
     }, error=>{
       console.log(error);
       if(event){
-        setTimeout(()=>{event.target.complete();},200);
+        setTimeout(()=>{event.target;},200);
       }
     });
     }else if(this.fab_data==null)
      {
-
+      this.tmp_data.length=0;
       this.service.getAllInfo().subscribe(infos =>{
         this.allInfos = infos['product'];
 
@@ -163,14 +160,14 @@ export class MarketPage implements OnInit {
 
       
       if(event){
-        setTimeout(()=>{event.target.complete();},200);
+        setTimeout(()=>{event.target;},200);
      
        }
             
     }, error=>{
       console.log(error);
       if(event){
-        setTimeout(()=>{event.target.complete();},200);
+        setTimeout(()=>{event.target;},200);
       }
     });
      
@@ -197,6 +194,23 @@ export class MarketPage implements OnInit {
     }
 
     }).catch(error=>"erreur de donnees"+error);
+
+  }
+  service_form(){
+    this.storage.create();
+    this.storage.get("body1").then(val=> {
+      if(val==null){
+        console.log("connectez vous pour vendre un produit");
+        this.router.navigate(["form-login"]);
+      }else
+      {
+        this.data1=val.email;
+        this.data2=val.password;
+        console.log("bienvenu"+this.data1);
+        this.router.navigate(["forme-service"]);
+      }
+
+    }).catch(error=>"erreur"+error);
 
   }
   registerpage(){

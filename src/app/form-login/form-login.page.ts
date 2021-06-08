@@ -15,7 +15,7 @@ private user_email:string="";
 private user_pass: string="";
 data1:any="";
 data2:any="";
-private url="http://192.168.1.110/finder/super/ionic_api.php";
+private url="http://192.168.100.69/finder/super/ionic_api.php";
 private response:any;
   constructor(
     private storage:Storage,

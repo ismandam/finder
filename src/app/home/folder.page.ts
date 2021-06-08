@@ -53,7 +53,7 @@ export class FolderPage implements OnInit {
         
         this.allInfos = JSON.parse(JSON.stringify(this.allInfos));
         if(event){
-          setTimeout(()=>{event.target.complete();},200);
+          setTimeout(()=>{event.target;},200);
        
          }
          console.log("affiche l'ID== :"+infos)
