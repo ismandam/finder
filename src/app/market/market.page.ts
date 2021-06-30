@@ -16,19 +16,23 @@ import {interfaceItem}from'../models/interfaceClass';
 })
 export class MarketPage implements OnInit {
   public Electronik:string;
+  extra:any;
+  stor:any;
+  stor2:any;
+  badge:any=[];
   allInfos : any=[];
   allInfos1 : any=[];
   data_tmp: any[];
   tmp_data : interfaceItem[]=[];
   img:any=[];
-   dataclass :any;
+  // dataclass :any;
   data1:any="";
   data2:any="";
   searchTerm:string;
   public toggled:boolean=false;
   public fab_data:string;
-  post: any[];
- 
+ // post: any[];
+ private feed:number;
   constructor(
    private navCtrl:NavController,
     private activatedRoute: ActivatedRoute,
@@ -36,7 +40,16 @@ export class MarketPage implements OnInit {
     private storage:Storage,
     public service:MyserviceService 
     ) {
-   
+     
+    
+
+      this.storage.create();
+      this.storage.get('badge').then(data=>{
+        this.stor=this.stor2+data;
+      console.log("storage data=",this.stor);
+      });
+        
+     
  this.toggled = false;
   }
 
@@ -50,8 +63,11 @@ export class MarketPage implements OnInit {
  }
   
   ngOnInit() {
+   
+    
    this.getInfos(this.allInfos);
   }
+ 
   fab(Autre1:string){
          
     if(Autre1.length>0){
@@ -63,7 +79,7 @@ export class MarketPage implements OnInit {
    }
 
 
-  getInfos(event:any){
+ async getInfos(event:any){
     if(this.fab_data!=null){
       this.tmp_data.length=0;
       console.log("bonjour::"+this.fab_data);
@@ -88,11 +104,14 @@ export class MarketPage implements OnInit {
              product0.cartier,
              2,
              true,
-             150,
-             "disponible en magasin"
+             product0.frais_livraison,
+             
+             product0.disponibilite,
             
              );
             
+
+
            this.tmp_data.push(element0);
           
           
@@ -107,14 +126,14 @@ export class MarketPage implements OnInit {
           j++;
         }   
       if(event){
-        setTimeout(()=>{event.target;},200);
-     
+        //setTimeout(()=>{event.target.complete();},200);
+        event.target.complete();
        }
             
     }, error=>{
       console.log(error);
       if(event){
-        setTimeout(()=>{event.target;},200);
+        setTimeout(()=>{event.target.complet();},200);
       }
     });
     }else if(this.fab_data==null)
@@ -122,10 +141,11 @@ export class MarketPage implements OnInit {
       this.tmp_data.length=0;
       this.service.getAllInfo().subscribe(infos =>{
         this.allInfos = infos['product'];
-
+        
         this.allInfos.forEach(product => {
           let img_ : string[] = [product.url_imgP,product.url_img1,product.url_img2];
          // let  disponible:any[]=[]
+         
           let element = new interfaceItem(
             product.Id,
             product.nom_produit,
@@ -140,34 +160,44 @@ export class MarketPage implements OnInit {
              product.cartier,
              2,
              true,
-             200,
-             "disponible en magasin"
+             product.frais_livraison,
+             
+             product.disponibilite,
             
              );
 
              this.tmp_data.push(element);
+
+             let i = 0;
+             // this.stor2=this.tmp_data.length;
+              while(i < this.tmp_data.length){
+               // console.log(this.tmp_data[i])
+                //traitement des donnees
+                this.badge=[i];
+                this.storage.create();
+               this.storage.set('badge',this.badge);
+                i++;
+              }
  
         });
 
-        console.log('data '+this.tmp_data);
-        let i = 0;
-        while(i < this.tmp_data.length){
-          console.log(this.tmp_data[i])
-          //traitement des donnees
-          i++;
-        }
-
-
+        this.storage.create();
+        this.storage.get('badge').then(data=>{
+          this.stor=(this.tmp_data.length+data[0])-data[0];
+        console.log("storage data=",this.stor);
+        });
+        console.log('data length '+this.tmp_data.length);  
       
       if(event){
-        setTimeout(()=>{event.target;},200);
-     
+        //setTimeout(()=>{event.target.complete();},200);
+        event.target.complete();
        }
             
-    }, error=>{
+    },error=>{
       console.log(error);
       if(event){
-        setTimeout(()=>{event.target;},200);
+        //setTimeout(()=>{event.target;},200);
+        event.target.complete();
       }
     });
      
@@ -184,7 +214,13 @@ export class MarketPage implements OnInit {
     console.log("val content"+ val);
     if(val==null){
       console.log("connectez vous pour vendre un produit");
-      this.router.navigate(["form-login"]);
+      let navigationExtras :NavigationExtras={
+        state: {
+          extra: "form-login"
+        }
+      
+      }
+      this.router.navigate(["form-login"],navigationExtras);
     }else
     {
       this.data1=val.email;
@@ -201,12 +237,19 @@ export class MarketPage implements OnInit {
     this.storage.get("body1").then(val=> {
       if(val==null){
         console.log("connectez vous pour vendre un produit");
-        this.router.navigate(["form-login"]);
+        let navigationExtras :NavigationExtras={
+          state: {
+            extra: "forme-service"
+          }
+        
+        }
+        this.router.navigate(["form-login"],navigationExtras);
       }else
       {
         this.data1=val.email;
         this.data2=val.password;
         console.log("bienvenu"+this.data1);
+       
         this.router.navigate(["forme-service"]);
       }
 

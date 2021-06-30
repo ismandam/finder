@@ -33,7 +33,18 @@
    </ion-card>
    <!-- fin espace pub-->
    <ion-card *ngIf="data != null">
-       <img src="{{data.urlimage}}" *ngIf="data.urlimage != null" alt="Image">
+
+    <ion-slides pager [options]="slideOptions"  >
+      <ion-slide >
+        <img src="{{data.urlimage[0]}}" *ngIf="data.urlimage != null" alt="Image">
+      </ion-slide>
+      <ion-slide>
+        <img src="{{data.urlimage[1]}}" *ngIf="data.urlimage != null" alt="Image">
+      </ion-slide>
+      
+    </ion-slides>
+
+      
       <ion-card-content >
             <ion-card-title>
                   <p>

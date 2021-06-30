@@ -47,10 +47,7 @@ const routes: Routes = [
     path: 'forme-product',
     loadChildren: () => import('./forme-product/forme-product.module').then( m => m.FormeProductPageModule)
   },
-  {
-    path: 'log-out',
-    loadChildren: () => import('./log-out/log-out.module').then( m => m.LogOutPageModule)
-  },
+ 
   {
     path: 'vandre',
     loadChildren: () => import('./vandre/vandre.module').then( m => m.VandrePageModule)

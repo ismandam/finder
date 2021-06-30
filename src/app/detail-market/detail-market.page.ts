@@ -54,7 +54,7 @@ export class DetailMarketPage implements OnInit {
        let added:boolean=false;
        this.storage.create();
       this.storage.get("Cart").then((data:itemCart[])=>{
-          console.log(" valeur de"+productDetail_.price);
+          console.log("frais de livraison= "+productDetail_.disponible.feed);
         //test si il n'y a pas d'article dans la bd///
         if(data==null||data.length==0){
           data=[];

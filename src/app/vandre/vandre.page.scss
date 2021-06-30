@@ -95,4 +95,18 @@ ion-fab-button[data-desc]::after{
       color: #9651DA;
 
     }
+    .actionsheet{
+      .text_{
+
+        display:flex;
+        justify-content: center;
+        align-self: center;
+        color: #9651DA !important;
+      }
+  .btn_{
+
+    color: #9651DA;
+  }
+      
+    }
    

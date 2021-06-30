@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar class="findercolor" >
     <ion-title>cart</ion-title>
-    <ion-label slot="end">Total=   {{total}} Frc cfa</ion-label>
+    <ion-label slot="end">Total={{total}}Frc cfa</ion-label>
   </ion-toolbar>
 </ion-header>
 
@@ -17,11 +17,11 @@
       <p>
         <ion-badge> {{article.quantite}} </ion-badge>x{{article.item.price}}
       </p>
-      <p *ngIf="article.item.disponible">
-        Livraison : {{article.item.disponible[1]}} Frc cfa
+      <p *ngIf="article.item.disponible1">
+        Livraison : {{article.item.disponible1[1]}} Frc cfa
         
       </p>
-      <p *ngIf="article.item.disponible"> Total: {{(article.item.disponible[1]) + (article.quantite * article.item.price)}} frc cfa </p>
+      <p *ngIf="article.item.disponible1"> Total: {{(+article.item.disponible1[1])+(+article.quantite*article.item.price)}} frc cfa </p>
      
       <ion-button  class="findercolor" (click)="mail()">
         <ion-icon ion-button class="starcolor" name="mail">&nbsp; 

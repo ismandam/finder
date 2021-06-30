@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{Storage} from '@ionic/storage';
-import { Router,  NavigationExtras } from '@angular/router';
+import { Router,  NavigationExtras, ActivatedRoute } from '@angular/router';
 import{HttpClient} from '@angular/common/http';
 
 
@@ -15,12 +15,23 @@ private user_email:string="";
 private user_pass: string="";
 data1:any="";
 data2:any="";
+extra:any="";
 private url="http://192.168.100.69/finder/super/ionic_api.php";
 private response:any;
   constructor(
     private storage:Storage,
      private router:Router,
-      private http: HttpClient) { }
+     private route:ActivatedRoute,
+      private http: HttpClient) {
+
+        this.route.queryParams.subscribe(params => {
+          if (this.router.getCurrentNavigation().extras.state) {
+            this.extra = this.router.getCurrentNavigation().extras.state.extra;
+            console.log("extrat data="+this.extra);
+          }
+        });
+       
+       }
 
   ngOnInit() {
   }
@@ -48,12 +59,26 @@ private response:any;
                 this.storage.set('body1',body1);
                 this.response= res.msg;
                 console.log(" retour de mon api00 :"+ this.response);
-                let navigationExtras: NavigationExtras = {
-                  state: {
-                    data:"bonjour"
-                  }
-                };
-                this.router.navigate(['vandre'],navigationExtras);
+                if(this.extra=="form-login"){
+                  let navigationExtras: NavigationExtras = {
+                    state: {
+                      data:"bonjour"
+                    }
+                  };
+                  this.router.navigate(['vandre'],navigationExtras);
+                }else 
+                if(this.extra=="forme-service"){
+                  let navigationExtras: NavigationExtras = {
+                    state: {
+                      data:"bonjour"
+                    }
+                  };
+                  this.router.navigate(['forme-service'],navigationExtras);
+                }else{
+                  this.router.navigate(['market']);
+
+                }
+              
             
               }else
               if(this.response==false){

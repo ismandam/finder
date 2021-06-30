@@ -14,7 +14,8 @@ import { itemCart } from '../models/iinterface_itemCart';
 })
 export class CartPage implements OnInit {
  public cartData:itemCart[];
-public total:number= 0;
+ total:any=0;
+  
 
   constructor(
     public modalctrl:ModalController,
@@ -29,12 +30,12 @@ public total:number= 0;
    then((data:itemCart[])=>{
    this.cartData=data;
    this.cartData.forEach((element:itemCart)=>{
-     if(element.item.disponible[2] ==="Disponible en magasin"){
-      element.item.disponible[1]=0;
+     if(element.item.disponible1[2] ==="disponible en magasin"){
+      element.item.disponible1[1]=0;
      
-     }
-     this.total += (element.quantite*element.item.price + element.item.disponible[1]);
-    
+     }else
+     
+      this.total +=(+element.item.disponible1[1])+ (+element.quantite*element.item.price) ;
    })
 
    }).catch(err=>{

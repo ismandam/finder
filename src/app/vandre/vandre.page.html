@@ -1,14 +1,11 @@
-<ion-header [translucent]="true">
-  <ion-toolbar class="findercolor" >
+
+<ion-header class="ion-no-border" >
+  <ion-toolbar  class="findercolor">
     <ion-buttons id="menubtn" slot="start">
       <ion-back-button id="menubtn" class="findercolor" ></ion-back-button>
-     
     </ion-buttons>
-  
- 
-   <ion-title>Enrégistrez un produit à vendre</ion-title>
+    <ion-title class="ion-text-center" >Enrégistrez un produit à vendre</ion-title>
   </ion-toolbar>
-  
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -16,7 +13,7 @@
     
   <div class="marg">
   <ion-list class="ion-padding">
-    <ion-item ion-button class="findercolor" (click)="imagePicker()">
+    <ion-item ion-button class="findercolor" (click)="selectImage()">
       <ion-icon  slot="start" class="starcolor" name="image">&nbsp; 
       </ion-icon> Choisir une Image 
     </ion-item>&nbsp;
@@ -44,7 +41,7 @@
           <ion-select-option value="Chaussure">Chaussure</ion-select-option>
           <ion-select-option value="Bijoux">Bijoux</ion-select-option>
           <ion-select-option value="Sac">Sac</ion-select-option>
-          <ion-select-option value="Beauté">Beauté</ion-select-option>
+          <ion-select-option value="Beaute">Beauté</ion-select-option>
           <ion-select-option value="Mode">Mode</ion-select-option>
           <ion-select-option value="Electroniques">Electroniques</ion-select-option>
           <ion-select-option value="Voitures">Voitures</ion-select-option>
@@ -72,7 +69,7 @@
        </ion-item>&nbsp;
        <ion-item>
         <ion-label class="label" position="floating">Frais de livraison</ion-label>
-        <ion-input class="ion-text-center"  type="text" name="frais"
+        <ion-input class="ion-text-center"  type="number" name="frais"
          [(ngModel)]="frais" >  </ion-input>
        </ion-item>&nbsp;
        <ion-item>  
@@ -113,7 +110,7 @@
 
 </ion-content>
 <ion-footer class="ion-no-border" >
-  <ion-toolbar  class="foot" >
+  <ion-toolbar  class="foot  findercolor" >
   <p   class="ion-text-center">Finder pour vous servire
    
   </p>

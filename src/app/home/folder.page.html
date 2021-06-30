@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar class="findercolor" >
     <ion-buttons slot="start">
       <ion-menu-button class="starcolor" ></ion-menu-button>
@@ -27,12 +27,41 @@
      
     </ion-refresher-content>
   </ion-refresher>
+
+  <ion-fab class="fabbtn" horizontal="end" vertical="bottom" slot="fixed" edge>
+    <ion-fab-button class="fabcolor" >
+      <ion-icon name="people" ></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top" >
+      <ion-fab-button class="fabsecond" data-desc="Autre"  (click)="fab('Autre')">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button class="fabsecond" data-desc="Passeport"  (click)="fab('Passeport_')">
+        <ion-icon  name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button class="fabsecond" data-desc="Diplôme"  (click)="fab('Diplome_')">
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button class="fabsecond" data-desc="Acte de naissance"  (click)="fab('Actes_')">
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button class="fabsecond" data-desc="Permis de conduire"  (click)="fab('Permis_')">
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button class="fabsecond" data-desc="Cni"  (click)="fab('Cni_')">
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+
+    </ion-fab-list>
+  </ion-fab>
  
   
   <ion-list  >&nbsp;
-   <ion-item  *ngFor="let info of allInfos |filter:searchTerm" type="ion-button" (click)="homelistener(info)" >
+   <ion-item  *ngFor="let info of tmp_data|filter:searchTerm" type="ion-button" (click)="homelistener(info)" >
     <ion-thumbnail slot="start">
-      <img src="{{info.urlimage}}" *ngIf="info.urlimage != null" alt="Image">
+      
+      <img [src]="info.urlimage[0]" *ngIf="info.urlimage!= null" alt="Image">
      </ion-thumbnail>
      <ion-label>
        <p>

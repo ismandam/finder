@@ -7,12 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-slides>
+<ion-content  [fullscreen]="true">
+ 
     
     <div class="marg">
     <ion-list class="ion-padding">
-      <ion-item ion-button class="findercolor"  (click)="imagePicker()" >
+      <ion-item ion-button class="findercolor"  (click)="selectImage()" >
         <ion-icon  slot="start" class="starcolor" name="image"> 
         </ion-icon> charger une image de la cni
       </ion-item>&nbsp;
@@ -70,6 +70,6 @@
         </ion-list>
   </div>
   
-  </ion-slides>
+  
 
 </ion-content>

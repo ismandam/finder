@@ -11,8 +11,8 @@
     city:string;
     cartier:string;
     avStart:number;
-    disponible: any [];
-    //disponible ?:available;
+    disponible1:any[];
+    disponible :available;
   constructor(id:string,nom_produit:string,desc:string,detail:string,img:string[],prix:number,
     contact:string,categorie:string,etat:string,ville:string,cartier:string,start:number,dispo:boolean,feed:number,type:string){
 
@@ -28,7 +28,8 @@
         this.city=ville;
         this.cartier=cartier;
         this.avStart=start;
-        this.disponible=[dispo, feed,type];
+        this.disponible={dispo,type,feed};
+        this.disponible1=[dispo,feed,type];
 
        
   }
@@ -41,6 +42,6 @@ dispo:boolean;
 ////type de livraison///
 type:string;
 ////fraiss de livraison
-frais ?:number;
+feed :number;
 
 }

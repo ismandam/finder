@@ -1,34 +1,31 @@
-<ion-header [translucent]="true">
+<ion-header >
   <ion-toolbar class="findercolor" >
     <ion-buttons id="menubtn" slot="start">
       <ion-back-button id="menubtn" class="findercolor" ></ion-back-button>
-     
     </ion-buttons>
-  
- 
    <ion-title>Enrégistrez un service</ion-title>
   </ion-toolbar>
-  
 </ion-header>
+
 
 <ion-content [fullscreen]="true">
   
     
   <div class="marg">
   <ion-list class="ion-padding">
-    <ion-item ion-button class="findercolor" (click)="imagePicker()">
+    <ion-item ion-button class="findercolor" (click)="selectImage()">
       <ion-icon  slot="start" class="starcolor" name="image">&nbsp; 
       </ion-icon> Logo de votre entreprise 
     </ion-item>&nbsp;
     <ion-item >
       <ion-label class="label" position="floating">Votre nom</ion-label>
       <ion-input  class="ion-text-center"  type="text" name="nom"
-       [(ngModel)]="nom_produit" >  </ion-input>
+       [(ngModel)]="nom_user" >  </ion-input>
       </ion-item>&nbsp;
       <ion-item>
         <ion-label class="label" position="floating">Type de service</ion-label>
         <ion-input class="ion-text-center"  type="text" name="desc"
-        [(ngModel)]="type" >  </ion-input>
+        [(ngModel)]="type_service" >  </ion-input>
        </ion-item>&nbsp;
   
      <ion-item>
@@ -43,26 +40,15 @@
        [(ngModel)]="detail" >  </ion-input>
      </ion-item>&nbsp;
 
-     
-        <ion-item>  
-          <ion-label class="label" position="floating">Etat du produit</ion-label>
-        <ion-select  placeholder="Neuf"  [(ngModel)]="etat">
-          <ion-select-option value="Neuf">Neuf</ion-select-option>
-          <ion-select-option value="Premier choix">Premier choix</ion-select-option>
-          <ion-select-option value="Dexième choix">Dexième choix</ion-select-option>
-          <ion-select-option value="Troixième choix">Troixième choix</ion-select-option>
-        </ion-select>
-      </ion-item>&nbsp;
-
       <ion-item>
         <ion-label class="label" position="floating">Cout du service</ion-label>
         <ion-input class="ion-text-center"  type="text" name="prix"
-         [(ngModel)]="prix" >  </ion-input>
+         [(ngModel)]="prix_service" >  </ion-input>
        </ion-item>&nbsp;
        <ion-item>
         <ion-label class="label" position="floating">Frais suplémentaire</ion-label>
         <ion-input class="ion-text-center"  type="text" name="frais"
-         [(ngModel)]="frais" >  </ion-input>
+         [(ngModel)]="frais_suple" >  </ion-input>
        </ion-item>&nbsp;
        <ion-item>  
         <ion-label class="label" position="floating">Disponibilité</ion-label>
@@ -76,14 +62,23 @@
        <ion-item>
         <ion-label class="label" position="floating">Votre contact</ion-label>
         <ion-input class="ion-text-center"  type="number" name="contact"
-         [(ngModel)]="contact" >  </ion-input>
+         [(ngModel)]="contact">  </ion-input>
        </ion-item>&nbsp;
        
-       <ion-item>
+
+       <ion-item>  
         <ion-label class="label" position="floating">Votre Pays</ion-label>
-        <ion-input class="ion-text-center"  type="text" name="pays"
-         [(ngModel)]="pays" >  </ion-input>
-       </ion-item>&nbsp;
+      <ion-select  placeholder="pays"  [(ngModel)]="pays">
+        <ion-select-option value="Cameroun">Cameroun</ion-select-option>
+        <ion-select-option value="Congo">Congo</ion-select-option>
+        <ion-select-option value="tchad">tchad</ion-select-option>
+        <ion-select-option value="RCA">RCA</ion-select-option>
+        <ion-select-option value="Gabon">Gabon</ion-select-option>
+        <ion-select-option value="Cote d'ivoire">Cote d'ivoire</ion-select-option>
+        <ion-select-option value="Mali">Mali</ion-select-option>
+        <ion-select-option value="Senegale">Senegale</ion-select-option>
+      </ion-select>
+      </ion-item>&nbsp;
 
        <ion-item>
         <ion-label class="label" position="floating">Votre ville</ion-label>
@@ -111,8 +106,8 @@
 
 
 </ion-content>
-<ion-footer class="ion-no-border" >
-  <ion-toolbar  class="foot" >
+<ion-footer class="ion-no-border"  >
+  <ion-toolbar  class="foot findercolor" >
   <p   class="ion-text-center">Finder pour vous servire
    
   </p>

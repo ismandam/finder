@@ -10,6 +10,8 @@ import{HttpClientModule} from '@angular/common/http';
 import{MyserviceService} from './myservice.service';
 import{IonicStorageModule} from '@ionic/storage-angular';
 import{ImagePicker} from '@ionic-native/image-picker/ngx';
+import { Camera } from '@ionic-native/Camera/ngx';
+//import { File } from '@ionic-native/file/ngx';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import{ImagePicker} from '@ionic-native/image-picker/ngx';
       useClass: IonicRouteStrategy
       },
    MyserviceService,
+   Camera,
   ],
   bootstrap: [AppComponent],
 })
