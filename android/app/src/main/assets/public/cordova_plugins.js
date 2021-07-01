@@ -114,6 +114,22 @@
         ]
         },
       {
+          "id": "cordova-plugin-file-transfer.FileTransfer",
+          "file": "plugins/cordova-plugin-file-transfer/www/FileTransfer.js",
+          "pluginId": "cordova-plugin-file-transfer",
+        "clobbers": [
+          "window.FileTransfer"
+        ]
+        },
+      {
+          "id": "cordova-plugin-file-transfer.FileTransferError",
+          "file": "plugins/cordova-plugin-file-transfer/www/FileTransferError.js",
+          "pluginId": "cordova-plugin-file-transfer",
+        "clobbers": [
+          "window.FileTransferError"
+        ]
+        },
+      {
           "id": "cordova-plugin-file.FileUploadOptions",
           "file": "plugins/cordova-plugin-file/www/FileUploadOptions.js",
           "pluginId": "cordova-plugin-file",
@@ -229,6 +245,7 @@
       "cordova-plugin-camera": "5.0.1",
       "cordova-plugin-email-composer": "0.9.2",
       "cordova-plugin-file": "6.0.2",
+      "cordova-plugin-file-transfer": "1.7.1",
       "cordova-plugin-telerik-imagepicker": "2.3.5"
     };
     // BOTTOM OF METADATA

@@ -11,7 +11,8 @@ import{MyserviceService} from './myservice.service';
 import{IonicStorageModule} from '@ionic/storage-angular';
 import{ImagePicker} from '@ionic-native/image-picker/ngx';
 import { Camera } from '@ionic-native/Camera/ngx';
-//import { File } from '@ionic-native/file/ngx';
+//import{FileTransfer} from '@ionic'
+import { File } from '@ionic-native/file/ngx';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { Camera } from '@ionic-native/Camera/ngx';
       },
    MyserviceService,
    Camera,
+   File
   ],
   bootstrap: [AppComponent],
 })

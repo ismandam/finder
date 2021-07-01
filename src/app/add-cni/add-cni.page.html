@@ -17,6 +17,10 @@
         </ion-icon> charger une image de la cni
       </ion-item>&nbsp;
       <ion-item >
+        <ion-label class="label" position="floating">fichier </ion-label>
+        <ion-input  class="ion-text-center"  type="file" multiple name="fichier" [(ngModel)]="fichier">  </ion-input>
+        </ion-item>&nbsp;
+      <ion-item >
         <ion-label class="label" position="floating">Nom </ion-label>
         <ion-input  class="ion-text-center"  type="text" name="nom"
          [(ngModel)]="nom_cni" >  </ion-input>
@@ -50,7 +54,7 @@
           [(ngModel)]="votre_nom">  </ion-input>
          </ion-item>&nbsp;
          <ion-item>
-          <ion-label class="label" position="floating">Votre contact</ion-label>
+          <ion-label class="label" position="floating">Votre contact téléphonique</ion-label>
           <ion-input class="ion-text-center"  type="number" name="telephone"
            [(ngModel)]="telephone" >  </ion-input>
          </ion-item>&nbsp;
@@ -60,7 +64,7 @@
           [(ngModel)]="email">  </ion-input>
          </ion-item>&nbsp;
         
-         <ion-item ion-button class="findercolor"   >
+         <ion-item ion-button class="findercolor"  (click)="fichier0()"  >
           <ion-icon  slot="start" class="starcolor" name="send">
           </ion-icon> Enregitrer la CNI
         </ion-item>&nbsp;
